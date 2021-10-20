@@ -6,6 +6,7 @@ import { PageUserComponent } from './presentation/pages/page-user/page-user.comp
 import { UserComponent } from './presentation/views/user/user.component';
 import { HeaderComponent } from './presentation/components/header/header.component';
 import { NavbarComponent } from './presentation/components/navbar/navbar.component';
+import { PageSeminariosComponent } from './presentation/pages/page-seminarios/page-seminarios.component';
 
 
 @NgModule({
@@ -13,11 +14,15 @@ import { NavbarComponent } from './presentation/components/navbar/navbar.compone
     PageUserComponent,
     UserComponent,
     HeaderComponent,
-    NavbarComponent
+    NavbarComponent,
+    PageSeminariosComponent
   ],
   imports: [
     CommonModule,
     UserRoutingModule
+  ],
+  exports: [
+    PageUserComponent
   ]
 })
 export class UserModule { }
