@@ -8,7 +8,8 @@ import { NavbarComponent } from './presentation/components/navbar/navbar.compone
 import { PageModulosComponent } from './presentation/pages/page-modulos/page-modulos.component';
 import { ModulosComponent } from './presentation/views/modulos/modulos.component';
 import { HeaderComponent } from './presentation/components/header/header.component';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -17,11 +18,14 @@ import { HeaderComponent } from './presentation/components/header/header.compone
     NavbarComponent,
     PageModulosComponent,
     ModulosComponent,
-    HeaderComponent
+    HeaderComponent,
+    
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MatSidenavModule,
+    MatListModule
   ],
   // exports: [
   //   PageAdminComponent

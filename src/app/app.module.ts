@@ -6,6 +6,7 @@ import { PageAdminComponent } from './admin/presentation/pages/page-admin/page-a
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { PageLoginComponent } from './core/presentation/pages/page-login/page-login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   {path: '', component: PageLoginComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule, CoreModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
