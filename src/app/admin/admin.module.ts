@@ -7,6 +7,7 @@ import { AdminComponent } from './presentation/views/admin/admin.component';
 import { NavbarComponent } from './presentation/components/navbar/navbar.component';
 import { PageModulosComponent } from './presentation/pages/page-modulos/page-modulos.component';
 import { ModulosComponent } from './presentation/views/modulos/modulos.component';
+import { HeaderComponent } from './presentation/components/header/header.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ModulosComponent } from './presentation/views/modulos/modulos.component
     AdminComponent,
     NavbarComponent,
     PageModulosComponent,
-    ModulosComponent
+    ModulosComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
