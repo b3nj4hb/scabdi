@@ -9,6 +9,7 @@ import { ModulosComponent } from './presentation/views/modulos/modulos.component
 import { HeaderComponent } from './presentation/components/header/header.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {MatListModule} from '@angular/material/list';
     CommonModule,
     AdminRoutingModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatIconModule
   ],
   // exports: [
   //   PageAdminComponent
