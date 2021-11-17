@@ -8,6 +8,8 @@ import { HeaderComponent } from './presentation/components/header/header.compone
 import { NavbarComponent } from './presentation/components/navbar/navbar.component';
 import { PageSeminariosComponent } from './presentation/pages/page-seminarios/page-seminarios.component';
 import { SeminariosComponent } from './presentation/views/seminarios/seminarios.component';
+import { ModulosComponent } from './presentation/views/modulos/modulos.component';
+import { PedidosOracionComponent } from './presentation/views/pedidos-oracion/pedidos-oracion.component';
 
 
 @NgModule({
@@ -18,13 +20,15 @@ import { SeminariosComponent } from './presentation/views/seminarios/seminarios.
     NavbarComponent,
     PageSeminariosComponent,
     SeminariosComponent,
+    ModulosComponent,
+    PedidosOracionComponent,
   ],
   imports: [
     CommonModule,
     UserRoutingModule
   ],
-  // exports: [
-  //   PageUserComponent,PageSeminariosComponent
-  // ]
+   exports: [
+     PageUserComponent,PageSeminariosComponent,PedidosOracionComponent,ModulosComponent
+   ]
 })
 export class UserModule { }
