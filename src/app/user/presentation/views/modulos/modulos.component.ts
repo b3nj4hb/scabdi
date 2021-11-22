@@ -3,8 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'adra-modulos',
   templateUrl: './modulos.component.html',
-  styleUrls: [
-    './modulos.component.css'
+  styles: [
   ]
 })
 export class ModulosComponent implements OnInit {

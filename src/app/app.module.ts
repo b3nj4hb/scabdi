@@ -9,6 +9,7 @@ import { PageLoginComponent } from './core/presentation/pages/page-login/page-lo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageUserComponent } from './user/presentation/pages/page-user/page-user.component';
 
+
 const routes: Routes = [
   {path: '', component: PageLoginComponent},
   // {path:'**', redirectTo:''},
