@@ -1,0 +1,75 @@
+<!-- boton modal -->
+<a class="btn btn-success" id="boton"
+data-bs-toggle="modal" data-bs-target="#asignarModulos" data-bs-whatever="@mdo">
+    <span id="icono" class=" material-icons">assignment</span>
+    <span id="texto" class="align-middle">asignar modulos</span>
+</a>
+
+<!-- modal -->
+<div class="modal fade" id="asignarModulos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- header -->
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Añadir Modulos
+                </h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- body -->
+            <div class="modal-body">
+                <p>A continuación deberá seleccionar los datos que quiere asignar</p>
+                <!-- <li class="border-top my-3" style="list-style: none"></li> -->
+
+                <form>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Modulo:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Sede/Banco:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Sede/Banco:</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Todo
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Banco A
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Banco B
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Banco C
+                            </label>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success">Asignar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
