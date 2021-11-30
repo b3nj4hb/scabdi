@@ -21,5 +21,37 @@
                 </button>
               </footer>
         </div>
+
+
+        <div class="card text-white bg-primary mb-3" style="max-width: 36rem;">
+            <div class="card-header">Semianrios</div>
+            <div class="card-body">
+              <h5 class="card-title">Listado de seminarios</h5>
+              
+                <table class ="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>nombre</th>
+                            <th>fecha inicio</th>
+                            <th>fecha fin</th>
+                            <th>url</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let pro of filas">
+                            <td>{{pro.id}}</td>
+                            <td>{{pro.nombre}}</td>
+                            <td>{{pro.inicio}}</td>
+                            <td>{{pro.fin}}</td>
+                            <td>{{pro.url}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+          </div>
+    
+
     </div>
 </div>

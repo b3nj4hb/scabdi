@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { PageAdminComponent } from './admin/presentation/pages/page-admin/page-admin.component';
-
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { PageLoginComponent } from './core/presentation/pages/page-login/page-login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageUserComponent } from './user/presentation/pages/page-user/page-user.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { SeminariosService } from './user/presentation/views/seminarios/seminarios.service';
 
 const routes: Routes = [
   {path: '', component: PageLoginComponent},
@@ -30,9 +30,10 @@ const routes: Routes = [
   imports: [
     BrowserModule, CoreModule,
     RouterModule.forRoot(routes),
+    HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [SeminariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
