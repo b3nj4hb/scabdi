@@ -11,15 +11,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { SeminariosService } from './user/presentation/views/seminarios/seminarios.service';
 
 const routes: Routes = [
-  {path: '', component: PageLoginComponent},
-  // {path:'**', redirectTo:''},
-  {path: 'admin', component: PageAdminComponent},
-  {path: 'admin',
-    loadChildren: () => import('./admin/admin.module').then((m) =>m.AdminModule)
+  { path: '', component: PageLoginComponent },
+  // { path: '**', redirectTo: '' },
+  { path: 'admin', component: PageAdminComponent },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule)
   },
-  {path: 'user', component: PageUserComponent},
-  {path: 'user',
-    loadChildren:() => import('./user/user.module').then((m) =>m.UserModule)
+  { path: 'user', component: PageUserComponent },
+  {
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule)
   }
 ]
 
