@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { Conferencia } from './conferencia';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,11 @@ export class SeminariosService {
   };
   private urlEndPoint: string = 'http://localhost:9292/api/conferencia'
   constructor(private http: HttpClient, private router: Router) { }
-  
+
   getDigi2(id:number): Observable<Digi2[]> {
     return this.http.get<Digi2[]>(`${this.urlEndPoint}/digi/${id}`)
+  }
+  getSeminarios(): Observable<Conferencia[]> {
+    return this.http.get<Conferencia[]>(this.urlEndPoint + '/all')
   }
 }

@@ -17,15 +17,18 @@
             <!-- tabla de modulos -->
             <!-- <adra-seminarios-tabla></adra-seminarios-tabla> -->
 
-            <select class="form-select" aria-label="Default select example" style="width: 30%;">
+            <select class="form-select" aria-label="Default select example" style="width: 30%;"
+            >
                 <option selected>Seleccionar Seminario</option>
-                <option value="1" >Seminario 4</option>
-                <option value="listardigi2(5)" >Seminario 5</option>
-                <option value="listardigi2(6)" >Seminario 6</option>
+                <!-- <option value="1" (onchange)="listardigi2(1)">Seminario 4</option> -->
+                <!-- <option value="5" >Seminario 6</option> -->
+                <option *ngFor="let s of digi3">{{s.nombre}}</option>
+                <!-- <option *ngFor="let s of digi3">listardigi2({{s.id}})<option> -->
             </select>
 
             <button (click)="listardigi2(5)">5555555</button>
             <button (click)="listardigi2(6)">6666666</button>
+            <button (click)="listardigi2(6)">prueba</button>
 
             <table class="table">
                 <thead>
