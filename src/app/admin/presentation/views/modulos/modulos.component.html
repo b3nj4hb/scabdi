@@ -17,12 +17,53 @@
       <li class="border-top my-3" style="list-style: none"></li>
 
       <!-- tabla de modulos -->
-      <adra-modulos-tabla></adra-modulos-tabla>
+      <!-- <adra-modulos-tabla></adra-modulos-tabla> -->
+      <!-- <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Area</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Recursos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let m of filas">
+              <td>{{m.id}}</td>
+              <td>{{m.area?.nombre}}</td>
+              <td>{{m.nombre}}</td>
+              <td>{{m.descripcion}}</td>
+              <td>{{m.recursos}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div> -->
+      <!-- tabla reporte -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Modulo</th>
+            <th scope="col">Banco Comunal</th>
+            <th scope="col">Recursos</th>
+            <th scope="col">Socios</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let mpb of mpb">
+            <td>{{mpb.no_modulo}}</td>
+            <td>{{mpb.no_banco_comunal}}</td>
+            <td>{{mpb.ca_total_recursos}}</td>
+            <td>{{mpb.ca_total_socios}}</td>
+          </tr>
+        </tbody>
+      </table>
 
       <div class="spinner-border m-5" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
-      
+
     </div>
   </div>
 </div>

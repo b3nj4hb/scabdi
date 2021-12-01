@@ -1,70 +1,19 @@
 <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre de Modulo</th>
-        <th scope="col">N° Sesiones</th>
-        <th scope="col">Registro</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Acciones</th>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Modulo</th>
+      <th scope="col">Banco Comunal</th>
+      <th scope="col">Recursos</th>
+      <th scope="col">Socios</th>
     </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Modulo 1</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Modulo 2</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Modulo 3</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Modulo 1</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Modulo 1</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Modulo 1</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Modulo 1</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Modulo 1</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-      </tr>
-    </tbody>
-  </table>
+  </thead>
+  <tbody>
+    <tr *ngFor="let mpb of mpb">
+      <td>{{mpb.no_modulo}}</td>
+      <td>{{mpb.no_banco_comunal}}</td>
+      <td>{{mpb.ca_total_recursos}}</td>
+      <td>{{mpb.ca_total_socios}}</td>
+    </tr>
+  </tbody>
+</table>
