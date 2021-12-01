@@ -21,4 +21,10 @@ export class ModulosService {
   getModulosPorBanco(): Observable<Modulosporbanco[]> {
     return this.http.get<Modulosporbanco[]>(this.urlEndPoint + '/modulosporbanco');
   }
+  // create(post:Modulos):Observable<any>{
+  //   return this.http.post<Modulos>(this.urlEndPoint + '/create', post,this.httpOptions);
+  // }
+  delete(id:number){
+    return this.http.delete(`${this.urlEndPoint}/delete/${id}`)
+  }
 }

@@ -18,7 +18,7 @@
 
       <!-- tabla de modulos -->
       <!-- <adra-modulos-tabla></adra-modulos-tabla> -->
-      <!-- <div>
+      <div>
         <table class="table">
           <thead>
             <tr>
@@ -30,18 +30,24 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let m of filas">
+            <tr *ngFor="let m of filas; let id=index">
               <td>{{m.id}}</td>
               <td>{{m.area?.nombre}}</td>
               <td>{{m.nombre}}</td>
               <td>{{m.descripcion}}</td>
               <td>{{m.recursos}}</td>
+              <td>
+                <button (click)="editar(id)">Editar</button>
+                <button (click)="eliminar(id)">Eliminar</button>
+                <a hre="#" class="text-danger px-2 user-select-auto" style="cursor: pointer;" (click)="eliminar(id)"><i
+                    class="fas fa-trash-alt"></i></a>
+              </td>
             </tr>
           </tbody>
         </table>
-      </div> -->
+      </div>
       <!-- tabla reporte -->
-      <table class="table">
+      <!-- <table class="table">
         <thead>
           <tr>
             <th scope="col">Modulo</th>
@@ -58,7 +64,7 @@
             <td>{{mpb.ca_total_socios}}</td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
 
       <div class="spinner-border m-5" role="status">
         <span class="visually-hidden">Loading...</span>

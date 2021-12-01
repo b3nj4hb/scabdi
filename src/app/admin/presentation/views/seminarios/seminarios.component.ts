@@ -16,13 +16,14 @@ export class SeminariosComponent implements OnInit {
   constructor(private SeminariosService: SeminariosService) { }
 
   ngOnInit(): void {
-    this.listardigi2(3);
+    // this.listardigi2(3);
     this.listarseminarios();
   }
 
-  listardigi2(id:number) {
+  listardigi2(id:any) {
+    console.log(id.target.value)
     // var c=Number(this.digi2[id].'valor id de la clase')
-    this.SeminariosService.getDigi2(id).subscribe(data => {
+    this.SeminariosService.getDigi2(id.target.value).subscribe(data => {
       this.digi2 = data;
       console.log(this.digi2)
     })
