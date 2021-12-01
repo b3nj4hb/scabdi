@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'adra-recurso4',
-  templateUrl: './recurso4.component.html',
+  selector: 'adra-progreso',
+  templateUrl: './progreso.component.html',
   styles: [
   ]
 })
-export class Recurso4Component implements OnInit {
+export class ProgresoComponent implements OnInit {
 
   constructor() { }
 

@@ -1,3 +1,5 @@
+import { ProgresoComponent } from './presentation/views/progreso/progreso.component';
+import { RecursosComponent } from './presentation/views/recursos/recursos.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageSeminariosComponent } from './presentation/pages/page-seminarios/page-seminarios.component';
@@ -9,7 +11,9 @@ const routes: Routes = [
   {path: 'opciones', component: PageUserComponent},
   {path: 'seminarios', component: PageSeminariosComponent},
   {path: 'modulos', component: ModulosComponent},
-  {path: 'pedidos-oracion', component:PedidosOracionComponent }
+  {path: 'pedidos-oracion', component:PedidosOracionComponent },
+  {path: 'recursos' , component:RecursosComponent},
+  {path: 'progreso', component:ProgresoComponent}
 ];
 
 @NgModule({

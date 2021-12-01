@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   constructor(private NavbarService: NavbarService) { }
 
   ngOnInit(): void {
-    this.listarrecurso(1)
+    this.listarrecurso(8)
   }
   listarrecurso(id:any) {
     console.log(id)
