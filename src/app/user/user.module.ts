@@ -10,6 +10,14 @@ import { PageSeminariosComponent } from './presentation/pages/page-seminarios/pa
 import { SeminariosComponent } from './presentation/views/seminarios/seminarios.component';
 import { ModulosComponent } from './presentation/views/modulos/modulos.component';
 import { PedidosOracionComponent } from './presentation/views/pedidos-oracion/pedidos-oracion.component';
+import { RecursosComponent } from './presentation/views/recursos/recursos.component';
+import { Recurso1Component } from './presentation/views/recursos/recurso1/recurso1.component';
+import { Recurso2Component } from './presentation/views/recursos/recurso2/recurso2.component';
+import { Recurso3Component } from './presentation/views/recursos/recurso3/recurso3.component';
+import { Recurso4Component } from './presentation/views/recursos/recurso4/recurso4.component';
+import { Recurso5Component } from './presentation/views/recursos/recurso5/recurso5.component';
+import { Recurso6Component } from './presentation/views/recursos/recurso6/recurso6.component';
+import { Recurso7Component } from './presentation/views/recursos/recurso7/recurso7.component';
 
 
 @NgModule({
@@ -22,6 +30,14 @@ import { PedidosOracionComponent } from './presentation/views/pedidos-oracion/pe
     SeminariosComponent,
     ModulosComponent,
     PedidosOracionComponent,
+    RecursosComponent,
+    Recurso1Component,
+    Recurso2Component,
+    Recurso3Component,
+    Recurso4Component,
+    Recurso5Component,
+    Recurso6Component,
+    Recurso7Component,
   ],
   imports: [
     CommonModule,

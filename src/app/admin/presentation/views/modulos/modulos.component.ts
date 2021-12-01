@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Modulos } from './modulos';
 import { ModulosService } from './modulos.service';
 import { Modulosporbanco } from './modulosporbanco';
-import swal from 'sweetalert2';
-import Swal from 'sweetalert2'
+// import swal from 'sweetalert2';
+// import Swal from 'sweetalert2'
 @Component({
   selector: 'adra-modulos',
   templateUrl: './modulos.component.html',

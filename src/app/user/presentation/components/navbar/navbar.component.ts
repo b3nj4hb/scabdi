@@ -1,3 +1,5 @@
+import { NavbarService } from './navbar.service';
+import { Recurso } from './recurso';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  recurso: Recurso[] = [];
+  constructor(private NavbarService: NavbarService) { }
 
   ngOnInit(): void {
+    this.listarrecurso(1)
   }
-
+  listarrecurso(id:any) {
+    console.log(id)
+    this.NavbarService.getRecurso(id).subscribe(data => {
+      this.recurso = data;
+      console.log(this.recurso)
+    })
+  }
 }
