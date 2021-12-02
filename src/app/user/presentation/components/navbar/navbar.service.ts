@@ -17,5 +17,4 @@ export class NavbarService {
   getRecurso(id:number): Observable<Recurso[]> {
     return this.http.get<Recurso[]>(`${this.urlEndPoint}/recursos/${id}`)
   }
-
 }
