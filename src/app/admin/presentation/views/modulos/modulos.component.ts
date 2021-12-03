@@ -14,12 +14,12 @@ import { Modulosporbanco } from './modulosporbanco';
 export class ModulosComponent implements OnInit {
 
   filas: Modulos[] = [];
-  mpb: Modulosporbanco[] = [];
+  // mpb: Modulosporbanco[] = [];
   constructor(private ModulosService: ModulosService) { }
 
   ngOnInit(): void {
     this.listar();
-    this.modulosporbanco();
+    // this.modulosporbanco();
   }
   listar() {
     this.ModulosService.getModulos().subscribe(data => {
@@ -28,12 +28,12 @@ export class ModulosComponent implements OnInit {
       console.log(this.filas)
     });
   }
-  modulosporbanco() {
-    this.ModulosService.getModulosPorBanco().subscribe(data => {
-      this.mpb = data;
-      console.log(this.mpb)
-    })
-  }
+  // modulosporbanco() {
+  //   this.ModulosService.getModulosPorBanco().subscribe(data => {
+  //     this.mpb = data;
+  //     console.log(this.mpb)
+  //   })
+  // }
   editar(id:number){
     alert("su id es:"+this.filas[id].id)
     }

@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.listarrecurso(8)
   }
-  listarrecurso(id:any) {
+  public listarrecurso(id:any) {
     console.log(id)
     this.NavbarService.getRecurso(id).subscribe(data => {
       this.recurso = data;

@@ -23,6 +23,9 @@ import { SeminariosModalAddComponent } from './presentation/components/seminario
 import { SeminariosModalAsignarComponent } from './presentation/components/seminarios/seminarios-modal-asignar/seminarios-modal-asignar.component';
 import { SeminariosNavbarComponent } from './presentation/components/navbar/seminarios-navbar/seminarios-navbar.component';
 import { SesionesModalAddComponent } from './presentation/components/sesiones/sesiones-modal-add/sesiones-modal-add.component';
+import { SociosComponent } from './presentation/views/socios/socios.component';
+import { SociosNavbarComponent } from './presentation/components/navbar/socios-navbar/socios-navbar.component';
+import { ModulosAsignarComponent } from './presentation/components/modulos/modulos-asignar/modulos-asignar.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { SesionesModalAddComponent } from './presentation/components/sesiones/se
     SeminariosModalAddComponent,
     SeminariosModalAsignarComponent,
     SeminariosNavbarComponent,
-    SesionesModalAddComponent
+    SesionesModalAddComponent,
+    SociosComponent,
+    SociosNavbarComponent,
+    ModulosAsignarComponent
     
   ],
   imports: [

@@ -1,4 +1,5 @@
 <adra-header></adra-header>
+
 <div id="caja">
 
   <!-- navbar -->
@@ -38,6 +39,7 @@
               <td>{{m.recursos}}</td>
               <td>
                 <button (click)="editar(id)">Editar</button>
+                <!-- <button (click)="listarrecurso(id)">Recursos</button> -->
                 <button (click)="eliminar(id)">Eliminar</button>
                 <a hre="#" class="text-danger px-2 user-select-auto" style="cursor: pointer;" (click)="eliminar(id)"><i
                     class="fas fa-trash-alt"></i></a>
@@ -66,9 +68,9 @@
         </tbody>
       </table> -->
 
-      <div class="spinner-border m-5" role="status">
+      <!-- <div class="spinner-border m-5" role="status">
         <span class="visually-hidden">Loading...</span>
-      </div>
+      </div> -->
 
     </div>
   </div>

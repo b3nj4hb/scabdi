@@ -1,0 +1,36 @@
+<adra-header></adra-header>
+
+<div id="caja">
+
+  <!-- navbar -->
+  <adra-socios-navbar></adra-socios-navbar>
+
+  <div id="contenido">
+    <div id="tabla" class="container-fluid">
+      <!-- tabla reporte -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <!-- <th scope="col">Apellido</th> -->
+            <th scope="col">DNI</th>
+            <th scope="col">Banco</th>
+            <th scope="col">Sede</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of s">
+            <td>{{s.id_persona?.nombre}}, {{s.id_persona?.apellido}}</td>
+            <!-- <td>{{s.id_persona?.apellido}}</td> -->
+            <td>{{s.id_persona?.dni}}</td>
+            <td>{{s.id_banco?.no_bancocomunal}}</td>
+            <td>{{s.id_banco?.id_sede?.nombre}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+
