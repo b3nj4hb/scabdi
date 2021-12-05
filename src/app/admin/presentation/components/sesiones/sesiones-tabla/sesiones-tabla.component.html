@@ -1,29 +1,81 @@
 <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Sesion</th>
-        <th scope="col">Modulo</th>
-        <th scope="col">Area</th>
-        <th scope="col">Inicio</th>
-        <th scope="col">Fin</th>
+  <thead>
+    <tr>
+      <th scope="col">Sesion</th>
+      <th scope="col">Modulo</th>
+      <th scope="col">Area</th>
+      <th scope="col">Inicio</th>
+      <th scope="col">Fin</th>
+      <th scope="col">Acciones</th>
     </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let s of sesiones">
-        <td>{{s.no_sesion}}</td>
-        <td>{{s.id_modulo?.nombre}}</td>
-        <td>{{s.id_modulo?.area?.nombre}}</td>
-        <td>{{s.fe_inicio_sesion}}</td>
-        <td>{{s.fe_fin_sesion}}</td>
-        <td>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            <a href="/admin/sesiones" role="button">
-              <span class="material-icons">edit</span>
-            </a>
-            <!-- <button (click)="eliminar(id)">Eliminar</button> -->
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of sesiones">
+      <td>{{s.no_sesion}}</td>
+      <td>{{s.id_modulo?.nombre}}</td>
+      <td>{{s.id_modulo?.area?.nombre}}</td>
+      <td>{{s.fe_inicio_sesion}}</td>
+      <td>{{s.fe_fin_sesion}}</td>
+      <td>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          <a href="/admin/sesiones" role="button">
+            <span class="material-icons" style="color:#157347">edit</span>
+          </a>
+          <a href="" data-bs-toggle="modal" data-bs-target="#ver_recursos"
+          >
+            <span class="material-icons" style="color:#157347">visibility</span>
+
+          </a>
+          <!-- <button (click)="eliminar(id)">Eliminar</button> -->
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- modal -->
+
+<div class="modal fade" id="ver_recursos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Recursos</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <!-- <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
           </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div> -->
+          <!-- tabla recursos -->
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">nombre</th>
+                <th scope="col">url</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let r of recurso">
+                <!-- <td>{{r.nombre}}</td>
+                <td>{{r.url}}</td> -->
+              </tr>
+            </tbody>
+          </table>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <!-- <button type="button" class="btn btn-success">Send message</button> -->
+      </div>
+    </div>
+  </div>
+</div>

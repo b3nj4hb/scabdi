@@ -28,7 +28,7 @@ export class SeminariosComponent implements OnInit {
       console.log(this.digi2)
     })
   }
-  //funcion listar seminarios
+  // funcion listar seminarios
   listarseminarios() {
     this.SeminariosService.getSeminarios().subscribe(data => {
       this.digi3 = data;
