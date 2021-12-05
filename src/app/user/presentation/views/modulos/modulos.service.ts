@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class NavbarService {
+export class ModuloService {
   httpOptions = {
     Headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

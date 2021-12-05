@@ -1,5 +1,6 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 @Component({
   selector: 'adra-recursos',
   templateUrl: './recursos.component.html',
@@ -7,14 +8,16 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   ]
 })
 export class RecursosComponent implements OnInit {
-  name = 'Set iframe source';
-  url: string = 'https://www.youtube.com/embed/d86LpR0hiHU';
-  urlSafe?: SafeResourceUrl;
+ 
 
-  constructor(public sanitizer: DomSanitizer) {}
+  constructor(private router:Router,private route:ActivatedRoute) {}
 
   ngOnInit() {
-    this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
+   this.route.paramMap.subscribe(params=>{
+     if (params.has("id_recurso")) {
+       console.log(params.get("id_recurso"))
+     }
+   })
   }
  
 }

@@ -16,8 +16,8 @@
             <div class="collapse show" id="home-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                 <li><a href="admin/modulos" class="link-dark rounded">Gestionar</a></li>
-                <!-- <li><a href="#" class="link-dark rounded">Updates</a></li> -->
-                <!-- <li><a href="#" class="link-dark rounded">Reports</a></li> -->
+                 <li><a href="#" class="link-dark rounded">Crear</a></li> 
+                 <li><a href="#" class="link-dark rounded">Asignar</a></li> 
               </ul>
             </div>
           </li>
@@ -32,13 +32,26 @@
             <div class="collapse show" id="dashboard-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                 <li><a href="admin/sesiones" class="link-dark rounded">Gestionar</a></li>
-                <!-- <li><a href="#" class="link-dark rounded">Weekly</a></li> -->
-                <!-- <li><a href="#" class="link-dark rounded">Monthly</a></li> -->
+                 <li><a href="#" class="link-dark rounded">Crear</a></li> 
+                 <li><a href="#" class="link-dark rounded">Asignar</a></li> 
                 <!-- <li><a href="#" class="link-dark rounded">Annually</a></li> -->
               </ul>
             </div>
           </li>
-          <li class="border-top my-3" style="list-style: none"></li>
+          <li class="border-top my-3"></li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+            Seminarios
+          </button>
+          <div class="collapse" id="orders-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a [routerLink]="['/admin/crearseminario']" class="link-dark rounded">  <span type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Crear</span></a></li>
+              <li><a href="" class="link-dark rounded">Gestionar</a></li>
+              <li><a href="" class="link-dark rounded">Asignar</a></li>
+              <li><a href="" class="link-dark rounded">Reporte</a></li>
+            </ul>
+          </div>
+        </li>
         </ul>
       </div>
       
