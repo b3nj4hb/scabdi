@@ -9,7 +9,7 @@
           </button>
           <div class="collapse show" id="home-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="/user/modulos" class="link-dark rounded">Ingresa a la sesion</a></li>
+              <li><a [routerLink]="['/user/modulos']" class="link-dark rounded">Ingresa a la sesion</a></li>
             </ul>
           </div>
         </li>
@@ -22,7 +22,7 @@
           </button>
           <div class="collapse" id="dashboard-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a class="link-dark rounded" href="/user/pedidos-oracion">Escribe tu oración aqui
+              <li><a class="link-dark rounded" [routerLink]="['/user/pedidos-oracion']">Escribe tu oración aqui
                 </a></li>
             </ul>
           </div>
@@ -34,7 +34,7 @@
           </button>
           <div class="collapse" id="account-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="/user/seminarios" class="link-dark rounded">Ingrese al seminario</a></li>
+              <li><a [routerLink]="['/user/seminarios']" class="link-dark rounded">Ingrese al seminario</a></li>
             </ul>
           </div>
         </li>
@@ -62,7 +62,7 @@
 </div>
 <div>
   <footer style="margin-left: 5px;">
-    <button type="button" class="btn btn-success"
+    <button type="button" class="btn btn-success" [routerLink]="['/user/']"
       style="background-color: #007B5F; display: flex;height: 40px; margin-left: 35px;">
       <span class="material-icons-outlined">
         home

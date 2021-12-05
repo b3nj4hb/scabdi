@@ -5,8 +5,7 @@ import { Modulosporbanco } from './modulosporbanco';
 @Component({
   selector: 'adra-modulos-tabla',
   templateUrl: './modulos-tabla.component.html',
-  styles: [
-  ]
+  styleUrls: ['./mpb.css']
 })
 export class ModulosTablaComponent implements OnInit {
 
@@ -15,6 +14,7 @@ export class ModulosTablaComponent implements OnInit {
   constructor(private ModulosService: ModulosService) { }
 
   ngOnInit(): void {
+    this.modulosporbanco();
   }
   modulosporbanco(){
     this.ModulosService.getModulosPorBanco().subscribe(data =>{

@@ -1,113 +1,116 @@
 <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre de Modulo</th>
-        <th scope="col">N° Sesiones</th>
-        <th scope="col">Registro</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Acciones</th>
+  <thead>
+    <tr>
+      <th scope="col">Sesion</th>
+      <th scope="col">Modulo</th>
+      <th scope="col">Area</th>
+      <th scope="col">Inicio</th>
+      <th scope="col">Fin</th>
+      <th scope="col">Acciones</th>
     </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Modulo 1</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-        <td>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            <a href="/admin/sesiones" role="button">
-              <span class="material-icons">edit</span>
-            </a>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of sesiones">
+      <td>{{s.nombre}}</td>
+      <td>{{s.modulo}}</td>
+      <td>{{s.area}}</td>
+      <td>{{s.inicio}}</td>
+      <td>{{s.fin}}</td>
+      <td>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          <a role="button" data-bs-toggle="modal" data-bs-target="#agregar_material" (click)="listarrecursos(s.id)">
+            <span class="material-icons" style="color:#157347">upload_file</span>
+          </a>
+          <a role="button" (click)="editar(s.id)">
+            <span class="material-icons" style="color:#157347">edit</span>
+          </a>
+          <a role="button" data-bs-toggle="modal" data-bs-target="#ver_recursos" (click)="listarrecursos(s.id)">
+            <span class="material-icons" style="color:#157347">visibility</span>
+          </a>
+          <!-- <button (click)="eliminar(id)">Eliminar</button> -->
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- modal ver recursos -->
+
+<div class="modal fade" id="ver_recursos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Recursos</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <!-- <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
           </div>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Modulo 2</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-        <td>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked >
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div> -->
+          <!-- tabla recursos -->
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">nombre</th>
+                <th scope="col">tipo</th>
+                <th scope="col">url</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let r of recursos">
+                <td>{{r.nombre}}</td>
+                <td>{{r.tipo}}</td>
+                <td>{{r.url}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <!-- <button type="button" class="btn btn-success">Send message</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modalagregar material -->
+
+<div class="modal fade" id="agregar_material" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Material</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Seleccionar Seminario</option>
+                <!-- <option [value] = " s.id" *ngFor="let s of digi3">{{s.nombre}}</option> -->
+            </select>
           </div>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Modulo 3</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-        <td>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
           </div>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Modulo 1</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-        <td>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked >
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Modulo 1</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-        <td>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Modulo 1</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-        <td>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked >
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Modulo 1</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-        <td>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Modulo 1</td>
-        <td>3</td>
-        <td>12/09/2021</td>
-        <td>Activo</td>
-        <td>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked >
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <!-- <button type="button" class="btn btn-success">Send message</button> -->
+      </div>
+    </div>
+  </div>
+</div>
