@@ -13,6 +13,7 @@ const routes: Routes = [
   {path: 'modulos', component: ModulosComponent},
   {path: 'pedidos-oracion', component:PedidosOracionComponent },
   {path: 'recursos' , component:RecursosComponent},
+  {path: 'recursos/:id_recurso' , component:RecursosComponent},
   {path: 'progreso', component:ProgresoComponent}
 ];
 

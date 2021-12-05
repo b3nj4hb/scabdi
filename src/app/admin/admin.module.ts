@@ -23,10 +23,8 @@ import { SeminariosModalAddComponent } from './presentation/components/seminario
 import { SeminariosModalAsignarComponent } from './presentation/components/seminarios/seminarios-modal-asignar/seminarios-modal-asignar.component';
 import { SeminariosNavbarComponent } from './presentation/components/navbar/seminarios-navbar/seminarios-navbar.component';
 import { SesionesModalAddComponent } from './presentation/components/sesiones/sesiones-modal-add/sesiones-modal-add.component';
-import { SociosComponent } from './presentation/views/socios/socios.component';
-import { SociosNavbarComponent } from './presentation/components/navbar/socios-navbar/socios-navbar.component';
-import { ModulosAsignarComponent } from './presentation/components/modulos/modulos-asignar/modulos-asignar.component';
-
+import { CrearseminarioComponent } from './presentation/views/crearseminario/crearseminario.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     PageAdminComponent,
@@ -48,9 +46,7 @@ import { ModulosAsignarComponent } from './presentation/components/modulos/modul
     SeminariosModalAsignarComponent,
     SeminariosNavbarComponent,
     SesionesModalAddComponent,
-    SociosComponent,
-    SociosNavbarComponent,
-    ModulosAsignarComponent
+    CrearseminarioComponent
     
   ],
   imports: [
@@ -58,7 +54,8 @@ import { ModulosAsignarComponent } from './presentation/components/modulos/modul
     AdminRoutingModule,
     MatSidenavModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule 
   ],
   // exports: [
   //   PageAdminComponent

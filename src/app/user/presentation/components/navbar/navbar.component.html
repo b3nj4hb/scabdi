@@ -5,14 +5,15 @@
         <li class="mb-1">
           <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
             data-bs-target="#home-collapse" aria-expanded="true">
-            Modulo Educativo<i class="bi bi-caret-down-fill"></i>
+            SESION 1<i class="bi bi-caret-down-fill"></i>
           </button>
           <div class="collapse show" id="home-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="/user/modulos" class="link-dark rounded">Ingresa al modulo</a></li>
+              <li><a href="/user/modulos" class="link-dark rounded">Ingresa a la sesion</a></li>
             </ul>
           </div>
         </li>
+
         <li class="border-top my-3"></li>
         <li class="mb-1">
           <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
@@ -27,40 +28,36 @@
           </div>
         </li>
         <li class="border-top my-3"></li>
-
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+            Seminarios
+          </button>
+          <div class="collapse" id="account-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="/user/seminarios" class="link-dark rounded">Ingrese al seminario</a></li>
+            </ul>
+          </div>
+        </li>
+        <!-- <li class="border-top my-3"></li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+            Orders
+          </button>
+          <div class="collapse" id="orders-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-dark rounded">New</a></li>
+              <li><a href="#" class="link-dark rounded">Processed</a></li>
+              <li><a href="#" class="link-dark rounded">Shipped</a></li>
+              <li><a href="#" class="link-dark rounded">Returned</a></li>
+            </ul>
+          </div>
+        </li> -->
+        <li class="border-top my-3"></li>
       </ul>
-      <div class="mb-3" style="width: 100%;">
-        <label placeholder="Leave a comment here" for="exampleFormControlTextarea1" class="form-label"> DEJANOS TU
-          PEDIDO DE ORACION</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        <button type="button" class="btn btn-success" style="background-color: #007B5F; display: flex;height: 40px;margin-left: 130px;margin-top: 10px;">
-          <p style="margin-top: 2px;margin-left: 5px;">Enviar</p>
-        </button>
-      </div>
+      
     </div>
     <div class="border-top my-3"></div>
-    <div class="container-fluid" style="max-width: 100%; height:100%;">
-      <div class="list-group" style="width: 110%;">
-        <li class="list-group-item active" aria-current="true" style="background-color: #007B5F;">MATERIAL EDUCATIVO
-        </li>
-        <a *ngFor="let r of recurso" href="#" class="list-group-item list-group-item-action list-group-item-success">
-            {{r.no_recurso}} <button type="button" class="btn btn-success" style="height: 35px; margin-left: 35px; float: right;background-color: #007B5F;width: 48px;;">
-        <span class="material-icons-outlined">
-            visibility
-        </span>
-      </button>
-        </a>
-        <ul class="list-group">
-          <li class="list-group-item">An item <button type="button" class="btn btn-outline-success">Ver</button></li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-          <li class="list-group-item">A fourth item</li>
-          <li class="list-group-item">And a fifth one</li>
-        </ul>
-
-
-      </div>
-    </div>
+   
   </div>
 </div>
 <div>

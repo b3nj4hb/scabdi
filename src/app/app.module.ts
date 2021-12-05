@@ -9,6 +9,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageUserComponent } from './user/presentation/pages/page-user/page-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SeminariosService } from './user/presentation/views/seminarios/seminarios.service';
+import { FormsModule } from '@angular/forms';
+
+
 
 const routes: Routes = [
   { path: '', component: PageLoginComponent },
@@ -27,13 +30,16 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+  
   ],
   imports: [
     BrowserModule, CoreModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    
   ],
   providers: [SeminariosService],
   bootstrap: [AppComponent]

@@ -18,6 +18,9 @@ export class SeminariosService {
   getSeminarios():Observable<Seminario[]>{
     return this.http.get<Seminario[]>(this.urlEndPoint + '/all');    
   }
+  getSeminarioactual():Observable<any[]>{
+    return this.http.get<any[]>(this.urlEndPoint + '/conferenciadehoy');
+  }
   
 
   

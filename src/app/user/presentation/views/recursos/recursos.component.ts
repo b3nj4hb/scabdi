@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class RecursosComponent implements OnInit {
+ 
 
-  constructor() { }
+  constructor(private router:Router,private route:ActivatedRoute) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+   this.route.paramMap.subscribe(params=>{
+     if (params.has("id_recurso")) {
+       console.log(params.get("id_recurso"))
+     }
+   })
   }
-
+ 
 }

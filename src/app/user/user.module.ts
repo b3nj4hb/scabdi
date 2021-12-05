@@ -12,7 +12,7 @@ import { ModulosComponent } from './presentation/views/modulos/modulos.component
 import { PedidosOracionComponent } from './presentation/views/pedidos-oracion/pedidos-oracion.component';
 import { RecursosComponent } from './presentation/views/recursos/recursos.component';
 import { ProgresoComponent } from './presentation/views/progreso/progreso.component';
-
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,7 +31,8 @@ import { ProgresoComponent } from './presentation/views/progreso/progreso.compon
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    FormsModule
   ],
    exports: [
      PageUserComponent,PageSeminariosComponent,PedidosOracionComponent,ModulosComponent
