@@ -1,9 +1,9 @@
-<adra-header></adra-header>
+<!-- <adra-header></adra-header> -->
 
 <div id="caja">
 
   <!-- navbar -->
-  <adra-socios-navbar></adra-socios-navbar>
+  <!-- <adra-socios-navbar></adra-socios-navbar> -->
 
   <div id="contenido">
     <div id="tabla" class="container-fluid">
@@ -19,7 +19,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let s of s">
+          <tr *ngFor="let s of socios">
             <td>{{s.id_persona?.nombre}}, {{s.id_persona?.apellido}}</td>
             <!-- <td>{{s.id_persona?.apellido}}</td> -->
             <td>{{s.id_persona?.dni}}</td>

@@ -9,7 +9,7 @@ import { SociosService } from './socios.service';
 })
 export class SociosComponent implements OnInit {
 
-  s: Socio[] = [];
+  socios: any[] = [];
   constructor(private SociosService: SociosService) { }
 
   ngOnInit(): void {
@@ -17,8 +17,8 @@ export class SociosComponent implements OnInit {
   }
   listar() {
     this.SociosService.getSocios().subscribe(data => {
-      this.s = data;
-      console.log(this.s)
+      this.socios = data;
+      console.log(this.socios)
     });
   }
 }

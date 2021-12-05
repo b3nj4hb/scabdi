@@ -13,7 +13,7 @@ export class SociosService {
   };
   private urlEndPoint: string = 'http://localhost:9292/api/socio'
   constructor(private http: HttpClient, private router: Router) { }
-  getSocios(): Observable<Socio[]> {
-    return this.http.get<Socio[]>(this.urlEndPoint + '/all');
+  getSocios(): Observable<any[]> {
+    return this.http.get<any[]>(this.urlEndPoint + '/all');
   }
 }
