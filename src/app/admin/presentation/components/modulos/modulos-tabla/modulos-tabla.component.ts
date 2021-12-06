@@ -5,18 +5,19 @@ import { Modulosporbanco } from './modulosporbanco';
 @Component({
   selector: 'adra-modulos-tabla',
   templateUrl: './modulos-tabla.component.html',
-  styleUrls: ['./tabla.css']
+  styleUrls: ['./mpb.css']
 })
 export class ModulosTablaComponent implements OnInit {
 
-  mpb: Modulosporbanco[] = [];
+  mpb:Modulosporbanco[]=[];
+
   constructor(private ModulosService: ModulosService) { }
 
   ngOnInit(): void {
     this.modulosporbanco();
   }
-  modulosporbanco() {
-    this.ModulosService.getModulosPorBanco().subscribe(data => {
+  modulosporbanco(){
+    this.ModulosService.getModulosPorBanco().subscribe(data =>{
       this.mpb = data;
       console.log(this.mpb)
     })

@@ -15,6 +15,7 @@ export class ModuloService {
   constructor(private http: HttpClient, private router: Router) { }
 
   getRecurso(id:number): Observable<Recurso[]> {
-    return this.http.get<Recurso[]>(`${this.urlEndPoint}/recursos/${id}`)
+    return this.http.get<Recurso[]>(`${this.urlEndPoint}/listarecursos/${id}`)
   }
+
 }

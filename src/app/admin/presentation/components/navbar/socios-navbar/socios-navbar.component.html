@@ -1,36 +1,36 @@
 <div id="body" class="flex-shrink-0 p-3 bg" style="width: 240px; height: 90%;">
-    <div style="display: flex; flex-direction: column;">
-      <div>
-        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-          <svg class="bi me-2" width="30" height="24">
-            <use xlink:href="#bootstrap" />
-          </svg>
-          <span class="fs-5 fw-semibold">Socios</span>
-        </a>
-        <ul class="list-unstyled ps-0">
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-              data-bs-target="#home-collapse" aria-expanded="true">
-              Socios<i class="bi bi-caret-down-fill"></i>
-            </button>
-            <div class="collapse show" id="home-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="admin/socios" class="link-dark rounded">Reporte</a></li>
-                <!-- <li><a href="admin/modulosporbanco" class="link-dark rounded">Modulos por banco</a></li> -->
-                <!-- <li><a href="#" class="link-dark rounded">Updates</a></li> -->
-                <!-- <li><a href="#" class="link-dark rounded">Reports</a></li> -->
-              </ul>
-            </div>
-          </li>
+  <div style="display: flex; flex-direction: column;">
+    <div>
+      <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+        <svg class="bi me-2" width="30" height="24">
+          <use xlink:href="#bootstrap" />
+        </svg>
+        <span class="fs-5 fw-semibold">Emprendedor</span>
+      </a>
+      <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#home-collapse" aria-expanded="true">
+            Emprendedor<i class="bi bi-caret-down-fill"></i>
+          </button>
+          <div class="collapse show" id="home-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a [routerLink]="['/admin/modulos']" class="link-dark rounded">Avance</a></li>
+              <!-- <li><a href="#" class="link-dark rounded">Updates</a></li> -->
+              <!-- <li><a href="#" class="link-dark rounded">Reports</a></li> -->
+            </ul>
+          </div>
+        </li>
 
-          <!-- separador -->
-          <li class="border-top my-3" style="list-style: none"></li>
-        </ul>
-      </div>
-  
+        <!-- separador -->
+        <li class="border-top my-3" style="list-style: none"></li>
+
+      </ul>
     </div>
-    <a class="btn btn-success" href="/admin/">
-        <span id="icono" class=" material-icons">home</span>
-        <span id="texto" class="align-middle">menu principal</span>
-    </a>
+
   </div>
+  <a class="btn btn-success" [routerLink]="['/admin/']">
+    <span id="icono" class=" material-icons">home</span>
+    <span id="texto" class="align-middle">menu principal</span>
+  </a>
+</div>

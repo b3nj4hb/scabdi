@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Modulos } from './modulos';
 import { ModulosService } from './modulos.service';
 import { Modulosporbanco } from './modulosporbanco';
+import Swal from 'sweetalert2'
 // import swal from 'sweetalert2';
 // import Swal from 'sweetalert2'
 @Component({
@@ -43,6 +44,42 @@ export class ModulosComponent implements OnInit {
       console.log(data)
     });
     this.listar();
+  }
+  confirmareliminar() {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+    
+    swalWithBootstrapButtons.fire({
+      title: 'Esta Seguro?',
+      text: "No se podrá revetir esta acción!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, eliminar!',
+      cancelButtonText: 'No, cancelar!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        swalWithBootstrapButtons.fire(
+          'Eliminado!',
+          'Su modulo ha sido eliminado.',
+          'success'
+        ) 
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          'Su modulo está a salvo :)',
+          'error'
+        )
+      }
+    })
   }
 
   // Swal.fire({

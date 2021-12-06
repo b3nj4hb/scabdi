@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/presentation/views/login/login.service';
 
 @Component({
   selector: 'adra-user',
@@ -8,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private login: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  logout() {
+    this.login.logout();
+    this.router.navigate(['/']);
+  }
 }

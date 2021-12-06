@@ -9,20 +9,19 @@
           </button>
           <div class="collapse show" id="home-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="/user/modulos" class="link-dark rounded">Ingresa a la sesion</a></li>
+              <li><a   [routerLink]="['/user/modulos']" class="link-dark rounded">Ingresa a la sesion</a></li>
             </ul>
           </div>
         </li>
-
         <li class="border-top my-3"></li>
         <li class="mb-1">
-          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-            data-bs-target="#dashboard-collapse" aria-expanded="false">
+          <button  class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#dashboard-collapse" aria-expanded="">
             Pedido de Oracion
           </button>
           <div class="collapse" id="dashboard-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a class="link-dark rounded" href="/user/pedidos-oracion">Escribe tu oración aqui
+              <li><a class="link-dark rounded"  [routerLink]="['/user/pedidos-oracion']" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Escribe tu oración aqui
                 </a></li>
             </ul>
           </div>
@@ -32,14 +31,14 @@
           <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
             Seminarios
           </button>
-          <div class="collapse" id="account-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="/user/seminarios" class="link-dark rounded">Ingrese al seminario</a></li>
+          <div class="collapse" id="account-collapse" >
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" >
+              <li><a  (click)="alert()" [routerLink]="['/user/seminarios']"  class="link-dark rounded">Ingrese al seminario</a></li>
             </ul>
           </div>
         </li>
-        <!-- <li class="border-top my-3"></li>
-        <li class="mb-1">
+        <!-- <li class="border-top my-3"></li> -->
+        <!-- <li class="mb-1">
           <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
             Orders
           </button>
@@ -51,12 +50,12 @@
               <li><a href="#" class="link-dark rounded">Returned</a></li>
             </ul>
           </div>
-        </li> -->
-        <li class="border-top my-3"></li>
+        </li>
+        <li class="border-top my-3"></li> -->
       </ul>
       
     </div>
-    <div class="border-top my-3"></div>
+    <!-- <div class="border-top my-3"></div> -->
    
   </div>
 </div>

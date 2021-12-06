@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Socio } from './socios';
-import { SociosService } from './socios.service';
+import { Persona } from './Persona';
+import { SocioService } from './socio.service';
 
 @Component({
   selector: 'adra-socios',
@@ -8,17 +8,17 @@ import { SociosService } from './socios.service';
   styleUrls: ['./socios.css']
 })
 export class SociosComponent implements OnInit {
-
-  socios: any[] = [];
-  constructor(private SociosService: SociosService) { }
+  persona: Persona[] = [];
+  constructor(private socioserv: SocioService) { }
 
   ngOnInit(): void {
-    this.listar();
+    this.listarsocios();
   }
-  listar() {
-    this.SociosService.getSocios().subscribe(data => {
-      this.socios = data;
-      console.log(this.socios)
-    });
+
+  listarsocios() {
+    this.socioserv.getSocios().subscribe(data => {
+      this.persona = data;
+      console.log(this.persona)
+    })
   }
 }

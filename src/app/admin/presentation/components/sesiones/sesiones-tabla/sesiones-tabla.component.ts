@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Sesiones } from '../../../views/sesiones/sesiones';
-import { SesionesService } from '../../../views/sesiones/sesiones.service'; 
-import { recursos } from './recursos';
-// navbar service
+import { Recurso } from '../../../views/sesiones/recurso';
+import { Sesion } from '../../../views/sesiones/sesion';
+import { SesionesService } from '../../../views/sesiones/sesiones.service';
+
 @Component({
   selector: 'adra-sesiones-tabla',
   templateUrl: './sesiones-tabla.component.html',
@@ -11,27 +11,28 @@ import { recursos } from './recursos';
 })
 export class SesionesTablaComponent implements OnInit {
 
-  recurso: recursos[] = [];
-  sesiones: Sesiones[] = [];
-  constructor(
-    private SesionesService: SesionesService,
-    ) { }
+  sesiones: Sesion[] = [];
+  recursos: Recurso[] = [];
+
+  constructor(private SesionService: SesionesService) { }
 
   ngOnInit(): void {
-    this.listar();
-    // this.listarrecurso(1);
-    // this.listadorecursos();
+    this.listarsesion();
+    // this.listarrecursos(1);
   }
-
-  listar() {
-    this.SesionesService.getSesiones().subscribe(data => {
+  listarsesion() {
+    this.SesionService.getSesiones().subscribe(data => {
       this.sesiones = data;
       console.log(this.sesiones)
-    });
+    })
   }
-
-
-  // public recurso(): void {
-  //   this.comp.listarrecurso(id)
-  // }
+  listarrecursos(id:any) {
+    this.SesionService.getRecursos(id).subscribe(data => {
+      this.recursos = data;
+      console.log(this.recursos)
+    })
+  }
+  editar(id:any){
+    alert("su id es:"+this.sesiones[id].id)
+    }
 }

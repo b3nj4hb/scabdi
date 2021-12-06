@@ -8,5 +8,5 @@ export class Recurso {
     file?:string;
     url_recurso?:string;
     no_sesion?:string;
- 
+    
  }

@@ -25,6 +25,8 @@ import { SeminariosNavbarComponent } from './presentation/components/navbar/semi
 import { SesionesModalAddComponent } from './presentation/components/sesiones/sesiones-modal-add/sesiones-modal-add.component';
 import { CrearseminarioComponent } from './presentation/views/crearseminario/crearseminario.component';
 import { FormsModule } from '@angular/forms';
+import { SociosComponent } from './presentation/views/socios/socios.component';
+import { SociosNavbarComponent } from './presentation/components/navbar/socios-navbar/socios-navbar.component';
 @NgModule({
   declarations: [
     PageAdminComponent,
@@ -46,7 +48,9 @@ import { FormsModule } from '@angular/forms';
     SeminariosModalAsignarComponent,
     SeminariosNavbarComponent,
     SesionesModalAddComponent,
-    CrearseminarioComponent
+    CrearseminarioComponent,
+    SociosComponent,
+    SociosNavbarComponent
     
   ],
   imports: [
