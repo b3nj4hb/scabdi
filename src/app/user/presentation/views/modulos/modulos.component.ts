@@ -19,7 +19,7 @@ urlSafe?:SafeResourceUrl;
   
   ngOnInit() {
     this.urlSafe=this.sanitizer.bypassSecurityTrustResourceUrl(this.url)
-    this.listarrecurso(1)
+    this.listarrecurso(2)
 
   }
 
