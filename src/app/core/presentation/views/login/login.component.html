@@ -1,20 +1,32 @@
 <div style="width: 100%; height: 100%; background: radial-gradient(#007B5F,#0A4A69)">
-    <div class="card position-absolute top-50 start-50 translate-middle text-center" style="width: 18rem; background: none; border:none">
+    <div class="card position-absolute top-50 start-50 translate-middle text-center"
+        style="width: 18rem; background: none; border:none">
         <div>
-            <img src="https://media.discordapp.net/attachments/867252664853200906/891891260456050698/Sin_titulo_5.png" style="width: 120px; padding-top: 15px;" alt="">
+            <img src="https://media.discordapp.net/attachments/867252664853200906/891891260456050698/Sin_titulo_5.png"
+                style="width: 120px; padding-top: 15px;" alt="">
         </div>
         <div class="card-body">
-            <div class="mb-3">
-                <!-- <label for="exampleFormControlInput1" class="form-label">Correo</label> -->
+            <!-- <div class="mb-3">
                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Usuario" />
             </div>
             <div class="mb-3">
-                <!-- <label for="exampleFormControlInput1" class="form-label">Contraseña</label> -->
                 <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña" />
+            </div> -->
+
+            <div class="input-group mb-3">
+                <div class="input-group-text bg-success text-light" ><span class="material-icons">account_circle</span></div>
+                <input [(ngModel)] = "usuario.username" type="text" class="form-control" placeholder="Username" name="username" autofocus>
             </div>
+            <div class="input-group mb-3">
+                <div class="input-group-text bg-success text-light" ><span class="material-icons">password</span></div>
+                <input type="password" [(ngModel)] = "usuario.password" class="form-control" placeholder="password" name="password">
+            </div>
+
             <!-- <a href="/admin" class="btn btn-success " style="background-color: #1C5448;">Iniciar Sesión</a> -->
-            <a href="/admin" class="btn btn-success " style="background-color: #1C5448;">Admin</a>
-            <a href="/user" class="btn btn-success " style="background-color: #1C5448;">User</a>
+            <!-- <a href="/admin" class="btn btn-success " style="background-color: #1C5448;">Admin</a>
+            <a href="/user" class="btn btn-success " style="background-color: #1C5448;">User</a> -->
+            <a (click)="login()" value="Login" role="button" class="btn btn-success " style="background-color: #1C5448;"
+            >LOGIN</a>
         </div>
     </div>
 </div>
