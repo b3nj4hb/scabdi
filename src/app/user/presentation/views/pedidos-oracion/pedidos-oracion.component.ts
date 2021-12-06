@@ -2,6 +2,7 @@ import { Persona } from './persona';
 import { PedidosOracionService } from './pedidos-oracion.service';
 import { Component, OnInit } from '@angular/core';
 import { Pedidos } from './pedidos-oracion';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'adra-pedidos-oracion',
   templateUrl: './pedidos-oracion.component.html',
@@ -25,6 +26,17 @@ export class PedidosOracionComponent implements OnInit {
     .subscribe(data => {
       console.log(data)
     })    
+    }
+
+    showalert(){
+      Swal.fire({
+        title: 'LISTO',
+        text: 'Pedido registrado con éxito!',
+        imageUrl: 'https://adra.org.pe/colecta/assets/img/voluntarito-4-2019.png',
+        imageWidth: 200,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+      })
     }
     
 }
