@@ -12,11 +12,16 @@ export class PedidosOracionService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  private urlpost:string ='http://localhost:9292/api/pedido'; 
+  private urlpost: string = 'http://localhost:9292/api/pedido';
   constructor(private http: HttpClient, private router: Router) { }
-  create(post:Pedidos):Observable<any>{   
-    
-    return this.http.post<Pedidos>(this.urlpost + '/create', post,this.httpOptions);
+  create(post: Pedidos): Observable<any> {
 
-}
+    return this.http.post<Pedidos>(this.urlpost + '/create', post, this.httpOptions);
+
+  }
+  idpersona() {
+    // sessionStorage.getItem('usuario')
+    let var01 = JSON.parse('')
+    
+  }
 }
