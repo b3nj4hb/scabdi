@@ -24,9 +24,10 @@
       <button type="button" class="btn btn-success" style="float: right;margin-right: 3.4%;margin-top: 1%;"
         data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Finalizar</button>
     </div>
-    <a type="button" >
+    <a type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Necesitas Ayuda?">
       <img style="max-width: 200px; margin-top: -230px;" src="https://tinyurl.com/cajamunecoadra" alt="">
     </a>
+    <a href="#" data-toggle="tooltip" data-placement="top" title="Hooray!">Hover</a>
   </div>
 
 </div>
@@ -68,4 +69,9 @@
     </div>
   </div>
 </div>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+  </script>
 <!-- modal de finalizar -->
