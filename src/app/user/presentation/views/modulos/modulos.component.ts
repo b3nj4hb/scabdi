@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModulosComponent implements OnInit {
 name='Set iframe source' 
-url:string="https://www.youtube.com/embed/HNjV3Jv3obM";
+url:string="https://www.youtube.com/embed/LaIchdMGFpE";
 urlSafe?:SafeResourceUrl;
 
   recurso: Recurso[] = [];
