@@ -1,26 +1,30 @@
 <adra-header></adra-header>
 <div style="display: flex; flex-direction: row;">
   <adra-navbar></adra-navbar>
-  <div style="width: 100%; height: 100%; background: #F1F2F1; padding-top: 25px;">
+  <div style="width: 100%; height: 80vh; background: #F1F2F1; padding-top: 25px; border-radius: 3px; margin: 10px; box-shadow: 0px 0px 5px 1px rgb(139, 139, 139);
+  padding: 10px;">
     <div class="container-fluid" style="max-width: 100%; height: 100%;display: flex;">
-      <div class="list-group" style="width: 20%;">
+      <div class="list-group" style="width: 28%;">
         <li class="list-group-item active" aria-current="true" style="background-color: #007B5F;">MATERIAL EDUCATIVO
         </li>
-        <a *ngFor="let r of recurso" class="list-group-item list-group-item-action list-group-item-success">
-          {{r.no_recurso}}|{{r.no_sesion}}
+        <a *ngFor="let r of recurso" class="list-group-item list-group-item-action list-group-item-success"
+          style="display: flex; align-items: center; justify-content: space-between;">
+          {{r.no_sesion}} <br>
+          {{r.no_recurso}}
           <button type="button" class="btn btn-success" (click)="setUrl(r.url_recurso)"
-            style="height: 35px; margin-left: 35px; float: right;background-color: #007B5F;width: 48px;;">
-            <span class="material-icons-outlined">
-              visibility
-            </span>
+            style="height: 35px;  background-color: #007B5F;width: 48px;">
+            <span class="material-icons-outlined">visibility</span>
           </button>
         </a>
         <adra-progreso style="margin-top: 30px;"></adra-progreso>
       </div>
       <iframe [src]="urlSafe" frameborder="0" style="width: 100%; height: 68vh;margin-left: 3%;"></iframe>
+
     </div>
-    <button type="button" class="btn btn-success" style="float: right;margin-right: 3.4%;margin-top: 1%;"
-      data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Finalizar</button>
+    <div style="float: right; margin-top: -40px; margin-right: 8px;">
+      <button type="button" class="btn btn-success" style="float: right;margin-right: 3.4%;margin-top: 1%;"
+        data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Finalizar</button>
+    </div>
   </div>
 </div>
 
