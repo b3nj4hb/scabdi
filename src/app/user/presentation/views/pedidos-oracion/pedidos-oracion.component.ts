@@ -43,7 +43,7 @@ export class PedidosOracionComponent implements OnInit {
       imageHeight: 200,
       imageAlt: 'Custom image',
       showConfirmButton: false,
-      timer: 1500
+      timer: 2500
     })
   }
 
