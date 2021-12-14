@@ -1,0 +1,71 @@
+<adra-header></adra-header>
+
+<div id="caja">
+
+    <!-- navbar -->
+    <adra-modulos-navbar></adra-modulos-navbar>
+
+    <div id="contenido">
+
+        <div id="tabla" class="container-fluid">
+            <div class="card text-center">
+                <div class="card-header">
+                    Asignar Modulos
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Seleccione el modulo y banco comunal</p>
+
+                    <div class="row" style="margin-bottom: 15px;">
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional
+                                        content.</p>
+                                    <select class="form-select" aria-label="Default select example" style="width: 100%;"
+                                        (change)="listarbancos()">
+                                        <option selected>Seleccionar Modulo</option>
+                                        <option [value]="m.id" *ngFor="let m of modulo">{{m.nombre}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional
+                                        content.</p>
+                                    <select class="form-select" aria-label="Default select example" style="width: 100%;"
+                                        (change)="listarmodulos()">
+                                        <option selected>Seleccionar Banco</option>
+                                        <option [value]="b.id_bancocomunal" *ngFor="let b of banco">
+                                            {{b.no_bancocomunal}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <a href="#" class="btn btn-success">Asignar</a>
+
+                </div>
+                <div class="card-footer text-muted">
+                    2 days ago
+                </div>
+            </div>
+            <!-- <select class="form-select" aria-label="Default select example" style="width: 30%;"
+                (change)="listarbancos()">
+                <option selected>Seleccionar Modulo</option>
+                <option [value]="m.id" *ngFor="let m of modulo">{{m.nombre}}</option>
+            </select>
+
+            <select class="form-select" aria-label="Default select example" style="width: 30%;"
+                (change)="listarmodulos()">
+                <option selected>Seleccionar Banco</option>
+                <option [value]="b.id_bancocomunal" *ngFor="let b of banco">{{b.no_bancocomunal}}</option>
+            </select> -->
+        </div>
+    </div>
+</div>

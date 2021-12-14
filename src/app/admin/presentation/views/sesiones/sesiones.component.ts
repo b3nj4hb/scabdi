@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Sesiones } from './sesiones';
+import { SesionesService } from './sesiones.service';
 
 @Component({
   selector: 'adra-sesiones',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SesionesComponent implements OnInit {
 
-  constructor() { }
+  // sesiones: Sesiones[] = [];
+  constructor(private SesionesService: SesionesService) { }
 
   ngOnInit(): void {
+    // this.listar();
   }
 
+  // listar() {
+  //   this.SesionesService.getSesiones().subscribe(data => {
+  //     this.sesiones = data;
+  //     console.log(this.sesiones)
+  //   });
+  // }
 }
