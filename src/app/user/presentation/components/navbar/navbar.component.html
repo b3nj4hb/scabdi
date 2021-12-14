@@ -19,7 +19,7 @@
             data-bs-target="#dashboard-collapse" aria-expanded="true">
             Pedido de Oracion
           </button>
-          <div class="collapse" id="dashboard-collapse">
+          <div class="collapse show" id="dashboard-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li><a class="link-dark rounded" [routerLink]="['/user/pedidos-oracion']" data-bs-toggle="modal"
                   data-bs-target="#exampleModal" data-bs-whatever="@mdo">Escribe tu oración aqui
@@ -33,7 +33,7 @@
             data-bs-target="#account-collapse" aria-expanded="true">
             Seminarios
           </button>
-          <div class="collapse" id="account-collapse">
+          <div class="collapse show" id="account-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li><a (click)="alert()" [routerLink]="['/user/seminarios']" class="link-dark rounded">Ingrese al
                   seminario</a></li>
