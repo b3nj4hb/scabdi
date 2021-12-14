@@ -1,14 +1,21 @@
-<div style="width: 100%; height: 100%; background: radial-gradient(#007B5F,#0A4A69)">
-    <div
-        class="container d-flex gap-4 justify-content-center text-center mt-0 mb-4 position-absolute top-50 start-50 translate-middle">
-        <a class="btn btn-primary btn-lg" style="background-color: #11548E; height: 200px; width: 200px;"
-            [routerLink]="['/user/modulos']">MODULOS</a>
-        <a class="btn btn-primary btn-lg" style="background-color: #11548E; height: 200px; width: 200px;"
-            [routerLink]="['/user/seminarios']">Seminarios</a>
-        <a class="btn btn-primary btn-lg" style="background-color: #11548E; height: 200px; width: 200px;"
-            [routerLink]="['/user/pedidos-oracion']">PEDIDOS DE ORACION</a>
-        <!-- <div class="b-example-divider"></div> -->
-        <a (click)="logout()" class="btn btn-primary btn-lg"
-            style="background-color: #11548E; height: 200px; width: 200px;" href="/#">Cerrar Sesion</a>
+<div id="fondo">
+    <div id="dashboard"
+        class="container position-absolute top-50 start-50 translate-middle">
+        <a id="boton" class="btn btn-primary" [routerLink]="['/user/modulos']">
+            <span id="icono" class="material-icons-outlined">library_books</span>
+            <span id="texto">MODULOS</span>
+        </a>
+        <a id="boton" class="btn btn-primary" [routerLink]="['/user/seminarios']">
+            <span id="icono" class="material-icons-outlined" style="font-size: 90px; margin-bottom: -2px;">videocam</span>
+            <span id="texto">Seminarios</span>
+        </a>
+        <a id="boton" class="btn btn-primary" [routerLink]="['/user/pedidos-oracion']">
+            <span id="icono" class="material-icons-outlined">book</span>
+            <span id="texto">Pedidos</span>
+        </a>
+        <a id="boton" class="btn btn-primary" [routerLink]="['/']" (click)="logout()">
+            <span id="icono" class="material-icons-outlined">logout</span>
+            <span id="texto">Cerrar Sesion</span>
+        </a>
     </div>
 </div>

@@ -5,8 +5,7 @@ import { AuthService } from 'src/app/core/presentation/views/login/login.service
 @Component({
   selector: 'adra-user',
   templateUrl: './user.component.html',
-  styles: [
-  ]
+  styleUrls: ['./user.css']
 })
 export class UserComponent implements OnInit {
 
