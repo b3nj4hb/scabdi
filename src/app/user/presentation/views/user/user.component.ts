@@ -18,4 +18,6 @@ export class UserComponent implements OnInit {
     this.login.logout();
     this.router.navigate(['/']);
   }
+
+
 }
