@@ -10,8 +10,8 @@ import { SeminariosService } from './seminarios.service';
 })
 export class SeminariosComponent implements OnInit {
 
-  digi2: Digi2[] = [];
-  digi3: Seminario[] = [];
+  digi2: Digi2[] = []; //datos de la consulta digi, comentarios de socios
+  digi3: Seminario[] = []; //datos de seminario
 
   constructor(private SeminariosService: SeminariosService) { }
 
@@ -19,7 +19,7 @@ export class SeminariosComponent implements OnInit {
     // this.listardigi2(3);
     this.listarseminarios();
   }
-
+  // funcion listar datos de la consulta
   listardigi2(id:any) {
     console.log(id.target.value)
     // var c=Number(this.digi2[id].'valor id de la clase')
@@ -28,7 +28,7 @@ export class SeminariosComponent implements OnInit {
       console.log(this.digi2)
     })
   }
-
+  // funcion listar seminarios
   listarseminarios() {
     this.SeminariosService.getSeminarios().subscribe(data => {
       this.digi3 = data;

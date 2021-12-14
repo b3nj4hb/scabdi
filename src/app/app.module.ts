@@ -38,7 +38,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule,
+    FormsModule
     
   ],
   providers: [SeminariosService],
