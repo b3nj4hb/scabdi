@@ -13,8 +13,8 @@ export class SocioService {
   };
   private urlEndPoint: string = 'https://scabdi.herokuapp.com/api/persona'
   constructor(private http: HttpClient, private router: Router) { }
-  getSocios(): Observable<Persona[]> {
-    return this.http.get<Persona[]>(this.urlEndPoint + '/listarpersona')
+  getSocios(id:number): Observable<Persona[]> {
+    return this.http.get<Persona[]>(`${this.urlEndPoint}/listarpersona/${id}`)
   }
   
 }

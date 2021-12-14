@@ -1,4 +1,8 @@
 export class Persona {
     id?:number;
-    nombre?:any;
+    persona?:string;
+    sede?:string;
+    banco?:string;
+    modulo?:string;
+    porcentaje?:string;
 }
