@@ -12,11 +12,11 @@ export class SociosComponent implements OnInit {
   constructor(private socioserv: SocioService) { }
 
   ngOnInit(): void {
-    this.listarsocios();
+    this.listarsocios(1);
   }
 
-  listarsocios() {
-    this.socioserv.getSocios().subscribe(data => {
+  listarsocios(id:any) {
+    this.socioserv.getSocios(id).subscribe(data => {
       this.persona = data;
       console.log(this.persona)
     })

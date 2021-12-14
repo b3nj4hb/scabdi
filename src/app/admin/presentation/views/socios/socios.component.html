@@ -30,14 +30,21 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Socio</th>
+                        <th scope="col">Persona</th>
+                        <th scope="col">Sede</th>
+                        <th scope="col">Banco</th>
+                        <th scope="col">Modulo</th>
+                        <th scope="col">Porcentaje</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let s of persona">
-                        <td>{{s.id}}</td>
-                        <td>{{s.nombre}}</td>
+                        <!-- <td>{{s.id}}</td> -->
+                        <td>{{s.persona}}</td>
+                        <td>{{s.sede}}</td>
+                        <td>{{s.banco}}</td>
+                        <td>{{s.modulo}}</td>
+                        <td>{{s.porcentaje}}</td>
                     </tr>
                 </tbody>
             </table>
