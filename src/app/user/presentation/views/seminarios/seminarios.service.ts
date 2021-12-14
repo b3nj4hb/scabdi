@@ -13,7 +13,7 @@ export class SeminariosService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  private urlEndPoint:string = 'http://localhost:9292/api/conferencia'
+  private urlEndPoint:string = 'https://scabdi.herokuapp.com/api/conferencia'
   constructor(private http:HttpClient,private router:Router) { }
   getSeminarios():Observable<Seminario[]>{
     return this.http.get<Seminario[]>(this.urlEndPoint + '/all');    

@@ -13,7 +13,7 @@ export class ModulosService {
   httpOptions = {
     Headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  private urlEndPoint: string = 'http://localhost:9292/api/modulo'
+  private urlEndPoint: string = 'https://scabdi.herokuapp.com/api/modulo'
   constructor(private http: HttpClient, private router: Router) { }
   getModulos(): Observable<Modulos[]> {
     return this.http.get<Modulos[]>(this.urlEndPoint + '/all');

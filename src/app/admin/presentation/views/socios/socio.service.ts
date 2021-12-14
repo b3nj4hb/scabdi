@@ -11,7 +11,7 @@ export class SocioService {
   httpOptions = {
     Headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  private urlEndPoint: string = 'http://localhost:9292/api/persona'
+  private urlEndPoint: string = 'https://scabdi.herokuapp.com/api/persona'
   constructor(private http: HttpClient, private router: Router) { }
   getSocios(): Observable<Persona[]> {
     return this.http.get<Persona[]>(this.urlEndPoint + '/listarpersona')

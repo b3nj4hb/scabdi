@@ -12,7 +12,7 @@ export class PedidosOracionService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  private urlpost: string = 'http://localhost:9292/api/pedido';
+  private urlpost: string = 'https://scabdi.herokuapp.com/api/pedido';
   constructor(private http: HttpClient, private router: Router) { }
   create(post: Pedidos): Observable<any> {
 

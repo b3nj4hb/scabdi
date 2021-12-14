@@ -13,7 +13,7 @@ export class SeminariosService {
   httpOptions = {
     Headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  private urlEndPoint: string = 'http://localhost:9292/api/conferencia'
+  private urlEndPoint: string = 'https://scabdi.herokuapp.com/api/conferencia'
   constructor(private http: HttpClient, private router: Router) { }
 
   getDigi2(id:number): Observable<Digi2[]> {

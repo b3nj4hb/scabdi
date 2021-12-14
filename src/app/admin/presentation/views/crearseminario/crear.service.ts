@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 export class CrearService {
 httpOptions={headers:new HttpHeaders({'Content-Type':'application/json'})
 };
-private urlpost:string ='http://localhost:9292/api/conferencia';
+private urlpost:string ='https://scabdi.herokuapp.com/api/conferencia';
 constructor(private http: HttpClient,private router: Router){}
 
 create(post:Seminario):Observable<any> {

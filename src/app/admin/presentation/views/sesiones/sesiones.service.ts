@@ -12,7 +12,7 @@ export class SesionesService {
   httpOptions = {
     Headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  private urlEndPoint: string = 'http://localhost:9292/api/sesion'
+  private urlEndPoint: string = 'https://scabdi.herokuapp.com/api/sesion'
   constructor(private http: HttpClient, private router: Router) { }
 
   getSesiones(): Observable<Sesion[]> {
