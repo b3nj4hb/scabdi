@@ -35,7 +35,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule, CoreModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {useHash: true}),
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule
