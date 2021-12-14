@@ -5,7 +5,12 @@
   padding: 10px;">
     <div class="container-fluid" style="max-width: 100%; height: 100%;display: flex;">
       <div class="list-group" style="width: 28%;">
-        <li class="list-group-item active" aria-current="true" style="background-color: #007B5F;">MATERIAL EDUCATIVO
+        <li class="list-group-item active" aria-current="true"
+          style="background-color: #007B5F; display: flex; justify-content: center; align-items: center;">MATERIAL
+          EDUCATIVO
+          <a type="button" (click)="ayuda()" style="margin-left: 15px;">
+            <span class="material-icons-outlined">info</span>
+          </a>
         </li>
         <a *ngFor="let r of recurso" class="list-group-item list-group-item-action list-group-item-success"
           style="display: flex; align-items: center; justify-content: space-between;">
@@ -19,27 +24,27 @@
 
       </div>
       <iframe [src]="urlSafe" frameborder="0" style="width: 100%; height: 68vh;margin-left: 3%;"></iframe>
+
+
     </div>
     <div style="float: right; margin-top: -40px; margin-right: 8px;">
       <button type="button" class="btn btn-success" style="float: right;margin-right: 3.4%;margin-top: 1%;"
         data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
         Finalizar
       </button>
-      <a type="button" (click)="ayuda2()">
-        <span class="material-icons-outlined">info</span>
-      </a>
-
     </div>
-    <a type="button" (click)="ayuda()">
-      <span class="material-icons-outlined">
-        info
-      </span>
+    <a type="button" (click)="ayuda2()" style="float: right; margin-top: -33px; margin-right: 110px;">
+      <span class="material-icons-outlined">info</span>
     </a>
-  </div>
+    <div style="margin-top: 25px;">
+      <adra-progreso></adra-progreso>
+    </div>
 
+
+  </div>
 </div>
 
-<adra-progreso style="margin-top: 30px;"></adra-progreso>
+
 <!-- modal de finalizar -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">

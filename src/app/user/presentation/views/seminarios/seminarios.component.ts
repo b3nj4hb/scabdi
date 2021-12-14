@@ -6,8 +6,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'adra-seminarios',
   templateUrl: './seminarios.component.html',
-  styles: [
-  ]
+  styleUrls: ['./seminarios.css']
 })
 export class SeminariosComponent implements OnInit {
 
