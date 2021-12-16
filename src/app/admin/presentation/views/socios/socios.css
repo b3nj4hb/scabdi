@@ -23,3 +23,83 @@
     max-width: 90%;
     height: 100%;
 }
+
+#boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* ancho justo */
+    max-width: fit-content;
+}
+
+#icono {
+    margin-right: 6px;
+}
+
+#modal {
+    display: flex;
+    flex-direction: column;
+    /* espacio entre cajas */
+    gap: 25px;
+}
+
+img {
+    width: 150px;
+    height: 200px;
+    overflow: hidden;
+    /* width: 100%; */
+    /* height: calc(100% - 0px); */
+    object-fit: cover;
+    /* contain, cover */
+}
+
+#datosCard {
+    max-width: fit-content;
+}
+
+#datosCardCard {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+#datos {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+#tablaModal {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    /* alinear horizontal */
+    /* justify-content: center; */
+    align-items: flex-start;
+}
+
+/* #card {
+    max-width: fit-content;
+    min-width: fit-content;
+} */
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+.card-header {
+    background-color: #007b5f;
+    /*adra*/
+    color: white;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}

@@ -7,48 +7,129 @@
     <div id="contenido">
         <div id="tabla" class="container-fluid">
 
-            <!-- modal de añadir modulos -->
-            <!--  <adra-seminarios-modal-add></adra-seminarios-modal-add> -->
-            <!-- modal de asignar modulos -->
-            <!-- <adra-seminarios-modal-asignar></adra-seminarios-modal-asignar> -->
-            <!-- separador -->
-            <!-- <li class="border-top my-3" style="list-style: none"></li> -->
-
-            <!-- tabla de modulos -->
-            <!-- <adra-seminarios-tabla></adra-seminarios-tabla> -->
-
-            <!-- <select class="form-select" aria-label="Default select example" style="width: 30%;"
-            (change)="listardigi2($event)">
-                <option selected>Seleccionar Seminario</option>
-                <option [value] = "s.id" *ngFor="let s of digi3">{{s.nombre}}</option>
-            </select> -->
-
-
-
-
-
+            <!-- tabla general -->
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Persona</th>
-                        <th scope="col">Sede</th>
+                        <th scope="col">Socio</th>
                         <th scope="col">Banco</th>
-                        <th scope="col">Modulo</th>
-                        <th scope="col">Porcentaje</th>
+                        <th scope="col">Sede</th>
+                        <th scope="col">Accion</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let s of persona">
-                        <!-- <td>{{s.id}}</td> -->
-                        <td>{{s.persona}}</td>
-                        <td>{{s.sede}}</td>
+                    <tr *ngFor="let s of socio">
+                        <td>{{s.socio}}</td>
                         <td>{{s.banco}}</td>
-                        <td>{{s.modulo}}</td>
-                        <td>{{s.porcentaje}}</td>
+                        <td>{{s.sede}}</td>
+                        <td>
+                            <div>
+                                <a id="boton" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#verMas" (click)="listarDatos(s.idsocio)"
+                                    (click)="listarModulos(s.idsocio)" (click)="listarPedidos(s.idsocio)">
+                                    <span id="icono" class="material-icons-outlined">visibility</span>
+                                    <span>Ver Más</span>
+                                </a>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
 
+        </div>
+    </div>
+</div>
+
+<!-- modal -->
+<div class="modal fade" id="verMas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">New message</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> -->
+            <div id="modal" class="modal-body">
+                <div id="datosCardCard">
+                    <!-- obs acomodar y hacer que se vea simetrico -->
+                    <div id="img">
+                        <img style="max-height: 200px;" src="https://c.tenor.com/3YaztZFL3oEAAAAd/yoshi-yoshi-dan%C3%A7ando.gif" alt="">
+                    </div>
+                    <div id="datosCard" class="card" *ngFor="let d of datos">
+                        <div class="card-header">
+                            Datos Personales
+                        </div>
+                        <div id="datos" class="card-body">
+                            <div>
+                                <b>Nombre</b>
+                                <p>{{d.socio}}</p>
+                                <b>Banco</b>
+                                <p>{{d.banco}}</p>
+                                <b>Sede</b>
+                                <p>{{d.sede}}</p>
+                            </div>
+                            <div>
+                                <b>DNI</b>
+                                <p>{{d.dni}}</p>
+                                <b>Correo</b>
+                                <p>{{d.correo}}</p>
+                                <b>Cel</b>
+                                <p>{{d.cel}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tablaModal">
+                    <div id="modulo" class="card">
+                        <div class="card-header">
+                            Historial de Modulos
+                        </div>
+                        <div class="card-body">
+                            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Modulo</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let m of modulos">
+                                            <td>{{m.modulo}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <p> Historial de Pedidos </p>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Pedido</th>
+                                            <th scope="col">Fecha</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let p of pedidos">
+                                            <td>{{p.pedido}}</td>
+                                            <td>{{p.fecha}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Send message</button>
+            </div>
         </div>
     </div>
 </div>
