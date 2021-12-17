@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ModulosTablaComponent } from './presentation/components/modulos/modulos-tabla/modulos-tabla.component';
+import { SeminariosTablaComponent } from './presentation/components/seminarios/seminarios-tabla/seminarios-tabla.component';
 import { PageAdminComponent } from './presentation/pages/page-admin/page-admin.component';
 import { PageModulosComponent } from './presentation/pages/page-modulos/page-modulos.component';
 import { PageSeminariosComponent } from './presentation/pages/page-seminarios/page-seminarios.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'crearseminario', component: CrearseminarioComponent},
   {path: 'socios', component: SociosComponent},
   {path: 'modulosporbanco', component: ModulosTablaComponent},
-  {path: 'programacion', component: ProgramacionComponent}
+  {path: 'programacion', component: ProgramacionComponent},
+  {path: 'seminariocomentario', component: SeminariosTablaComponent}
 ];
 
 @NgModule({
