@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { Seminario } from '../../../views/crearseminario/Seminario';
 import { CrearService } from '../../../views/crearseminario/crear.service';
+import { Modulo } from './modulo';
+import { Sesion } from './sesion';
+import { CrearMSService } from './crear.service';
+
 @Component({
   selector: 'adra-modulos-navbar',
   templateUrl: './modulos-navbar.component.html',
@@ -9,7 +13,9 @@ import { CrearService } from '../../../views/crearseminario/crear.service';
 })
 export class ModulosNavbarComponent implements OnInit {
   post = new Seminario;
-  constructor(private ob: CrearService) { }
+  modulo = new Modulo;
+  sesion = new Sesion;
+  constructor(private ob: CrearService, private cs: CrearMSService) { }
 
 
   ngOnInit(): void {
@@ -17,6 +23,13 @@ export class ModulosNavbarComponent implements OnInit {
   guardar() {
 
     this.ob.create(this.post).subscribe(data => { console.log(data) })
+  }
+
+  crearSesion(){
+    this.cs.crearSesion(this.sesion).subscribe(data => {console.log(data)})
+  }
+  crearModulo(){
+    this.cs.crearModulo(this.modulo).subscribe(data => {console.log(data)})
   }
 
   confirmar() {
