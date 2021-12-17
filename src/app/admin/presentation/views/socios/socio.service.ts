@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Persona } from 'src/app/user/presentation/views/pedidos-oracion/persona';
+import { Persona } from './persona';
 
 @Injectable({
   providedIn: 'root'

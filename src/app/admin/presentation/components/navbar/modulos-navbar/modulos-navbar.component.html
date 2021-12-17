@@ -5,7 +5,7 @@
         <svg class="bi me-2" width="30" height="24">
           <use xlink:href="#bootstrap" />
         </svg>
-        <span class="fs-5 fw-semibold">Modulos</span>
+        <span class="fs-5 fw-semibold">MENU</span>
       </a>
       <ul class="list-unstyled ps-0">
         <li class="mb-1">
@@ -16,9 +16,9 @@
           <div class="collapse show" id="home-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li><a [routerLink]="['/admin/modulos']" class="link-dark rounded">Gestionar</a></li>
-              <li><a [routerLink]="['/admin/modulosporbanco']" class="link-dark rounded">Modulos por banco</a></li>
-              <!-- <li><a href="#" class="link-dark rounded">Updates</a></li> -->
-              <!-- <li><a href="#" class="link-dark rounded">Reports</a></li> -->
+              <!-- <li><a [routerLink]="['/admin/modulosporbanco']" class="link-dark rounded">Crear</a></li> -->
+              <li><a  type="button" class="link-dark rounded" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Crear</a></li>
+              
             </ul>
           </div>
         </li>
@@ -33,22 +33,110 @@
           <div class="collapse show" id="dashboard-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li><a [routerLink]="['/admin/sesiones']" class="link-dark rounded">Gestionar</a></li>
-              <!-- <li><a href="#" class="link-dark rounded">Weekly</a></li> -->
-              <!-- <li><a href="#" class="link-dark rounded">Monthly</a></li> -->
-              <!-- <li><a href="#" class="link-dark rounded">Annually</a></li> -->
+              <li><a type="button" class="link-dark rounded" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@mdo" class="link-dark rounded">Crear</a></li>
             </ul>
           </div>
         </li>
 
         <!-- separador -->
         <li class="border-top my-3" style="list-style: none"></li>
-
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="true">
+            Seminarios
+          </button>
+          <div class="collapse show" id="account-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-dark rounded">Gestionar</a></li>
+              <li><a href="#" class="link-dark rounded" type="button" class="link-dark rounded" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@mdo">Crear</a></li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
 
   </div>
-  <!-- <a class="btn btn-success" [routerLink]="['/admin/']" style="margin-top: 48vh;">
-    <span id="icono" class=" material-icons">home</span>
-    <span id="texto" class="align-middle">menu principal</span>
-  </a> -->
 </div>
+<!-- modal de crear modulos  -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">CREAR MODULO</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal de crear modulos -->
+<!-- modal de crear sesiones -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">CREAR SESION</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal de crear sesiones -->
+<!-- modal de crear seminarios -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">CREAR SEMIANRIO</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal de crear seminarios -->
