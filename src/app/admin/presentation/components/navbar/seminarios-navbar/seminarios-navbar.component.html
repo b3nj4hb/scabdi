@@ -8,7 +8,7 @@
         <span class="fs-5 fw-semibold">Seminarios</span>
       </a>
       <ul class="list-unstyled ps-0">
-        
+
         <li class="mb-1">
           <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
             data-bs-target="#orders-collapse" aria-expanded="true">
@@ -17,8 +17,17 @@
           <div class="collapse show" id="orders-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li>
-                <a 
-                [routerLink]="['/admin/crearseminario']" class="link-dark rounded">
+                <a [routerLink]="['/admin/crearseminario']" class="link-dark rounded">
+                  <span type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" data-bs-whatever="@mdo">Crear</span></a>
+              </li>
+              <li><a href="" class="link-dark rounded">Gestionar</a></li>
+              <li><a href="" class="link-dark rounded">Asignar</a></li>
+              <li><a href="" class="link-dark rounded">Reporte</a></li>
+            </ul>
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <a [routerLink]="['/admin/crearseminario']" class="link-dark rounded">
                   <span type="button" class="btn btn-outline-success" data-bs-toggle="modal"
                     data-bs-target="#exampleModal" data-bs-whatever="@mdo">Crear</span></a>
               </li>

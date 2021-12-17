@@ -21,6 +21,19 @@
             </ul>
           </div>
         </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#home-collapse" aria-expanded="true">
+            SEMINARIO<i class="bi bi-caret-down-fill"></i>
+          </button>
+          <div class="collapse show" id="home-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a [routerLink]="['/admin/modulos']" class="link-dark rounded">Avance</a></li>
+              <!-- <li><a href="#" class="link-dark rounded">Updates</a></li> -->
+              <!-- <li><a href="#" class="link-dark rounded">Reports</a></li> -->
+            </ul>
+          </div>
+        </li>
 
         <!-- separador -->
         <li class="border-top my-3" style="list-style: none"></li>

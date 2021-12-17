@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'adra-modulos-navbar',
   templateUrl: './modulos-navbar.component.html',
@@ -11,5 +11,31 @@ export class ModulosNavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+confirmar(){
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'MODULO CREADO',
+    showConfirmButton: false,
+    timer: 1500
+  })
+}
+confirmarsesion(){
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'SESION CREADA',
+    showConfirmButton: false,
+    timer: 1500
+  })
+}
+confirmarsem(){
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'SEMINARIO CREADO',
+    showConfirmButton: false,
+    timer: 1500
+  })
+}
 }
