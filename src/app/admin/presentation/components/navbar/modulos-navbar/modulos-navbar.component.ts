@@ -1,41 +1,49 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import { Seminario } from '../../../views/crearseminario/Seminario';
+import { CrearService } from '../../../views/crearseminario/crear.service';
 @Component({
   selector: 'adra-modulos-navbar',
   templateUrl: './modulos-navbar.component.html',
   styleUrls: ['./modulos-navbar.component.css']
 })
 export class ModulosNavbarComponent implements OnInit {
+  post = new Seminario;
+  constructor(private ob: CrearService) { }
 
-  constructor() { }
 
   ngOnInit(): void {
   }
-confirmar(){
-  Swal.fire({
-    position: 'center',
-    icon: 'success',
-    title: 'MODULO CREADO',
-    showConfirmButton: false,
-    timer: 1500
-  })
-}
-confirmarsesion(){
-  Swal.fire({
-    position: 'center',
-    icon: 'success',
-    title: 'SESION CREADA',
-    showConfirmButton: false,
-    timer: 1500
-  })
-}
-confirmarsem(){
-  Swal.fire({
-    position: 'center',
-    icon: 'success',
-    title: 'SEMINARIO CREADO',
-    showConfirmButton: false,
-    timer: 1500
-  })
-}
+  guardar() {
+
+    this.ob.create(this.post).subscribe(data => { console.log(data) })
+  }
+
+  confirmar() {
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'MODULO CREADO',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+  confirmarsesion() {
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'SESION CREADA',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+  confirmarsem() {
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'SEMINARIO CREADO',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
 }

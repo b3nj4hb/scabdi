@@ -27,6 +27,7 @@ import { CrearseminarioComponent } from './presentation/views/crearseminario/cre
 import { FormsModule } from '@angular/forms';
 import { SociosComponent } from './presentation/views/socios/socios.component';
 import { SociosNavbarComponent } from './presentation/components/navbar/socios-navbar/socios-navbar.component';
+import { ProgramacionComponent } from './presentation/views/programacion/programacion.component';
 @NgModule({
   declarations: [
     PageAdminComponent,
@@ -50,7 +51,8 @@ import { SociosNavbarComponent } from './presentation/components/navbar/socios-n
     SesionesModalAddComponent,
     CrearseminarioComponent,
     SociosComponent,
-    SociosNavbarComponent
+    SociosNavbarComponent,
+    ProgramacionComponent
     
   ],
   imports: [

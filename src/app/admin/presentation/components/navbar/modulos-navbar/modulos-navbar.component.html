@@ -49,9 +49,9 @@
           </button>
           <div class="collapse show" id="account-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-dark rounded">Gestionar</a></li>
-              <li><a href="#" class="link-dark rounded" type="button" class="link-dark rounded" data-bs-toggle="modal"
-                  data-bs-target="#exampleModal2" data-bs-whatever="@mdo">Crear</a></li>
+              <li><a [routerLink]="['/admin/seminarios']" class="link-dark rounded">Gestionar</a></li>
+              <li><a class="link-dark rounded" type="button" class="link-dark rounded" data-bs-toggle="modal"
+                  data-bs-target="#crearSeminarioModal">Crear</a></li>
             </ul>
           </div>
         </li>
@@ -160,43 +160,42 @@
 </div>
 <!-- modal de crear sesiones -->
 <!-- modal de crear seminarios -->
-<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="crearSeminarioModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">CREAR SEMIANRIO</h5>
+        <h5 class="modal-title" id="exampleModalLabel">DATOS DEL SEMINARIO</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+    
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">NOMBRE</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <input type="text" class="form-control" id="recipient-name" name="noconferencia" [(ngModel)]="post.nombre">
           </div>
           <div class="mb-3">
+            <label for="recipient-name" class="col-form-label"  >ENLACE</label>
+            <input type="text" class="form-control" id="recipient-name" name="urlconferencia" [(ngModel)]="post.url">
+          </div>
+          
+        <div style="display: flex;">
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">ENLACE</label>
-              <input type="text" class="form-control" id="recipient-name">
+                <label for="recipient-name" class="col-form-label"  >FECHA DE INICIO</label>
+                <input type="date" class="form-control" id="recipient-name" name="feinicio"  [(ngModel)]="post.inicio">
             </div>
-          </div>
-          <div class="mb-3">
-            <div class="row g-2">
-                <div class="col-md">
-                    <label for="message-text" class="col-form-label">Fecha Inicio:</label>
-                    <input type="date" class="form-control" id="recipient-name">
-                </div>
-                <div class="col-md">
-                    <label for="recipient-name" class="col-form-label">Fecha Fin:</label>
-                    <input type="date" class="form-control" id="recipient-name">
-                </div>
+            <div class="mb-3" style="margin-left: 20px ;">
+                <label for="recipient-name" class="col-form-label">FECHA DE FINALIZACION</label>
+                <input type="date" class="form-control" id="recipient-name" name="fefin" [(ngModel)]="post.fin">
             </div>
         </div>
-        </form>
+        
       </div>
       <div class="modal-footer">
-        <button type="button" (click)="confirmarsem()" class="btn btn-success" data-bs-dismiss="modal">GUARDAR</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button (click)="guardar()" (click)="confirmarsem()" type="button" class="btn btn-primary">Crear</button>
       </div>
     </div>
   </div>
 </div>
+
 <!-- modal de crear seminarios -->
