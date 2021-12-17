@@ -3,6 +3,7 @@ import { ModuloService } from './modulos.service';
 import { Recurso } from './recurso';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import { Sesionactiva } from './sesionactiva';
 @Component({
   selector: 'adra-modulos',
   templateUrl: './modulos.component.html',
@@ -14,18 +15,26 @@ export class ModulosComponent implements OnInit {
   url: string = "https://www.youtube.com/embed/LaIchdMGFpE";
   urlSafe?: SafeResourceUrl;
 
+  sesion: Sesionactiva[] = [];
   recurso: Recurso[] = [];
   constructor(private ModuloService: ModuloService, public sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url)
-    this.listarrecurso(2)
-
+    // this.listarrecurso(2) sesion 2
+    this.sesionActiva()
   }
 
   setUrl(url: string | undefined) {
     this.url = url ? url : "https://www.youtube.com/embed/HNjV3Jv3obM"
     this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url)
+  }
+
+  sesionActiva() {
+    this.ModuloService.getSesionActiva().subscribe(data => {
+      this.sesion = data;
+      console.log(this.sesion)
+    })
   }
 
   listarrecurso(id: any) {
@@ -59,7 +68,7 @@ export class ModulosComponent implements OnInit {
     Swal.fire({
       title: 'AL PRESIONAR EL BOTON DE "FINALIZAR" USTED CALIFICARA ESTA SESION',
       width: 450,
-      
+
       position: 'bottom',
       confirmButtonText: 'GRACIAS!',
       color: '#239B56 ',
