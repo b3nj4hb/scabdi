@@ -20,7 +20,7 @@ export class SeminariosComponent implements OnInit {
     this.listarseminarios();
   }
   // funcion listar datos de la consulta
-  listardigi2(id:any) {
+  listardigi2(id: any) {
     console.log(id.target.value)
     // var c=Number(this.digi2[id].'valor id de la clase')
     this.SeminariosService.getDigi2(id.target.value).subscribe(data => {
