@@ -1,1 +1,51 @@
-<p>seminarios-tabla works!</p>
+<adra-header></adra-header>
+<div id="caja">
+
+    <!-- navbar -->
+    <adra-socios-navbar></adra-socios-navbar>
+
+    <div id="contenido">
+        <div id="tabla" class="container-fluid">
+
+            <!-- modal de añadir modulos -->
+           <!--  <adra-seminarios-modal-add></adra-seminarios-modal-add> -->
+            <!-- modal de asignar modulos -->
+            <!-- <adra-seminarios-modal-asignar></adra-seminarios-modal-asignar> -->
+            <!-- separador -->
+            <!-- <li class="border-top my-3" style="list-style: none"></li> -->
+
+            <!-- tabla de modulos -->
+            <!-- <adra-seminarios-tabla></adra-seminarios-tabla> -->
+
+            <select class="form-select" aria-label="Default select example" style="width: 30%;"
+            (change)="listardigi2($event)">
+                <option selected>Seleccionar Seminario</option>
+                <option [value] = "s.id" *ngFor="let s of digi3">{{s.nombre}}</option>
+            </select>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Persona</th>
+                        <th scope="col">Seminario</th>
+                        <th scope="col">comentario</th>
+                        <th scope="col">Puntuacion</th>
+                        <th scope="col">Banco</th>
+                        <th scope="col">Sede</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let digi2 of digi2">
+                        <td>{{digi2.persona}}</td>
+                        <td>{{digi2.seminario}}</td>
+                        <td>{{digi2.comentario}}</td>
+                        <td>{{digi2.puntuacion}}</td>
+                        <td>{{digi2.banco}}</td>
+                        <td>{{digi2.sede}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
