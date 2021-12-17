@@ -2,7 +2,7 @@
 <div id="caja">
 
     <!-- navbar -->
-    <adra-modulos-navbar></adra-modulos-navbar>
+    <adra-seminarios-navbar></adra-seminarios-navbar>
 
     <div id="contenido">
         <div id="tabla" class="container-fluid">
@@ -23,10 +23,9 @@
                         registrados por parte del socio</h3>
                 </span>
                 <span class="selector">
-                    <select class="form-select" aria-label="Default select example"
-                        style="width: 110%; margin-left: 10px;" (change)="listardigi2($event)">
+                    <select class="form-select" aria-label="Default select example">
                         <option selected>Seleccionar Seminario</option>
-                        <option [value]="s.id" *ngFor="let s of digi3">{{s.nombre}}</option>
+                        <option >nombre</option>
                     </select>
                 </span>
             </div>
@@ -44,13 +43,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let digi2 of digi2">
-                        <td>{{digi2.persona}}</td>
-                        <td>{{digi2.seminario}}</td>
-                        <td>{{digi2.comentario}}</td>
-                        <td>{{digi2.puntuacion}}</td>
-                        <td>{{digi2.banco}}</td>
-                        <td>{{digi2.sede}}</td>
+                    <tr>
+                        <td>persona</td>
+                        <td>seminario</td>
+                        <td>comentario</td>
+                        <td>puntuacion</td>
+                        <td>banco</td>
+                        <td>sede</td>
                     </tr>
                 </tbody>
             </table>
