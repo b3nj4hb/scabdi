@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Sesionactiva } from './sesionactiva';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +18,7 @@ export class ModuloService {
   getRecurso(id:number): Observable<Recurso[]> {
     return this.http.get<Recurso[]>(`${this.urlEndPoint}/listarecursos/${id}`)
   }
-
+  getSesionActiva():Observable<Sesionactiva[]>{
+    return this.http.get<Sesionactiva[]>(`${this.urlEndPoint}/sesionactiva/`)
+  }
 }
