@@ -6,51 +6,21 @@
 
     <div id="contenido">
         <div id="tabla" class="container-fluid">
-
-            <!-- modal de añadir modulos -->
-            <!--  <adra-seminarios-modal-add></adra-seminarios-modal-add> -->
-            <!-- modal de asignar modulos -->
-            <!-- <adra-seminarios-modal-asignar></adra-seminarios-modal-asignar> -->
-            <!-- separador -->
-            <!-- <li class="border-top my-3" style="list-style: none"></li> -->
-
-            <!-- tabla de modulos -->
-            <!-- <adra-seminarios-tabla></adra-seminarios-tabla> -->
-            <div id="titulo">
-                <span class="texto">
-                    <h2>Reporte de Asistencia por seminario</h2>
-                    <h3>A continuación deberá seleccionar el seminario del cuál se van a listar los comentarios
-                        registrados por parte del socio</h3>
-                </span>
-                <span class="selector">
-                    <select class="form-select" aria-label="Default select example"
-                        style="width: 110%; margin-left: 10px;" (change)="listardigi2($event)">
-                        <option selected>Seleccionar Seminario</option>
-                        <option [value]="s.id" *ngFor="let s of digi3">{{s.nombre}}</option>
-                    </select>
-                </span>
-            </div>
-
-
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Persona</th>
                         <th scope="col">Seminario</th>
-                        <th scope="col">comentario</th>
-                        <th scope="col">Puntuacion</th>
-                        <th scope="col">Banco</th>
-                        <th scope="col">Sede</th>
+                        <th scope="col">Inicio</th>
+                        <th scope="col">Fin</th>
+                        <th scope="col">Url</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let digi2 of digi2">
-                        <td>{{digi2.persona}}</td>
-                        <td>{{digi2.seminario}}</td>
-                        <td>{{digi2.comentario}}</td>
-                        <td>{{digi2.puntuacion}}</td>
-                        <td>{{digi2.banco}}</td>
-                        <td>{{digi2.sede}}</td>
+                    <tr *ngFor="let s of digi3">
+                        <td>{{s.nombre}}</td>
+                        <td>{{s.inicio}}</td>
+                        <td>{{s.fin}}</td>
+                        <td>{{s.url}}</td>
                     </tr>
                 </tbody>
             </table>
