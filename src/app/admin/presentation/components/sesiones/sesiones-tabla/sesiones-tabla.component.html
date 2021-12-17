@@ -17,17 +17,19 @@
       <td>{{s.inicio}}</td>
       <td>{{s.fin}}</td>
       <td>
-          <div style="padding: px;">
-            <a role="button" data-bs-toggle="modal" data-bs-target="#agregar_material" (click)="listarrecursos(s.id)">
-              <span class="material-icons" style="color:#157347">upload_file</span>
-            </a>
-            <a role="button" (click)="editar(s.id)">
-              <span class="material-icons" style="color:#157347">edit</span>
-            </a>
-            <a role="button" data-bs-toggle="modal" data-bs-target="#ver_recursos" (click)="listarrecursos(s.id)">
-              <span class="material-icons" style="color:#157347">visibility</span>
-            </a>
-          </div>             
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          <a role="button" data-bs-toggle="modal" data-bs-target="#agregar_material" (click)="listarrecursos(s.id)">
+            <span class="material-icons" style="color:#157347">upload_file</span>
+          </a>
+          <a role="button" (click)="editar(s.id)">
+            <span class="material-icons" style="color:#157347">edit</span>
+          </a>
+          <a role="button" data-bs-toggle="modal" data-bs-target="#ver_recursos" (click)="listarrecursos(s.id)">
+            <span class="material-icons" style="color:#157347">visibility</span>
+          </a>
+          <!-- <button (click)="eliminar(id)">Eliminar</button> -->
+        </div>
       </td>
     </tr>
   </tbody>
