@@ -18,7 +18,10 @@ export class ModuloService {
   getRecurso(id:number): Observable<Recurso[]> {
     return this.http.get<Recurso[]>(`${this.urlEndPoint}/listarecursos/${id}`)
   }
-  getSesionActiva():Observable<Sesionactiva[]>{
-    return this.http.get<Sesionactiva[]>(`${this.urlEndPoint}/sesionactiva/`)
+  getSesionActiva(id:number):Observable<Sesionactiva[]>{
+    return this.http.get<Sesionactiva[]>(`${this.urlEndPoint}/sesionactiva/${id}`)
+  }
+  getIdPersona(id:number): Observable<any[]>{
+    return this.http.get<any[]>(`${this.urlEndPoint}/idpersona/${id}`)
   }
 }

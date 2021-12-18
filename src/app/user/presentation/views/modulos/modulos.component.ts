@@ -4,6 +4,8 @@ import { Recurso } from './recurso';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { Sesionactiva } from './sesionactiva';
+import { AuthService } from 'src/app/core/presentation/views/login/login.service';
+import { Persona } from './persona';
 @Component({
   selector: 'adra-modulos',
   templateUrl: './modulos.component.html',
@@ -17,12 +19,24 @@ export class ModulosComponent implements OnInit {
 
   sesion: Sesionactiva[] = [];
   recurso: Recurso[] = [];
-  constructor(private ModuloService: ModuloService, public sanitizer: DomSanitizer) { }
+  persona: Persona[] = [];
+  varidpersona = this.ls.usuario.idusuario; //va a contener el id de la persona retornado por el metodo idpersona
+  
+  constructor(private ModuloService: ModuloService, public sanitizer: DomSanitizer, private ls: AuthService) { }
 
   ngOnInit() {
     this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url)
     // this.listarrecurso(2) sesion 2
-    this.sesionActiva()
+    // this.varidpersona = this.ls.usuario.idusuario;
+    // console.log(this.varidpersona)
+    // this.idPersona(this.varidpersona)
+    this.idusuario()
+    this.sesionActiva(this.varidpersona)
+  }
+
+  idusuario(){
+    this.varidpersona = this.ls.usuario.idusuario
+    console.log(this.varidpersona)
   }
 
   setUrl(url: string | undefined) {
@@ -30,8 +44,14 @@ export class ModulosComponent implements OnInit {
     this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url)
   }
 
-  sesionActiva() {
-    this.ModuloService.getSesionActiva().subscribe(data => {
+  idPersona(id: any) {
+    this.ModuloService.getIdPersona(id).subscribe(data => {
+      this.persona = data;
+      console.log(this.persona)
+    })
+  }
+  sesionActiva(id: any) {
+    this.ModuloService.getSesionActiva(id).subscribe(data => {
       this.sesion = data;
       console.log(this.sesion)
     })
