@@ -55,6 +55,7 @@ export class AuthService {
     this._usuario.roles = payload.authorities;
     this._usuario.idusuario = id_usuario;
     sessionStorage.setItem("usuario", JSON.stringify(this._usuario));
+    sessionStorage.quedateahi = this.usuario.idusuario
     return this._usuario;
   }
   guardarToken(accessToken: string): void {

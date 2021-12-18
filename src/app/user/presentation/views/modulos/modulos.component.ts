@@ -20,22 +20,21 @@ export class ModulosComponent implements OnInit {
   sesion: Sesionactiva[] = [];
   recurso: Recurso[] = [];
   persona: Persona[] = [];
-  varidpersona = this.ls.usuario.idusuario; //va a contener el id de la persona retornado por el metodo idpersona
-  
+  varidpersona: any;
+  sactiva: any;
+  // quedateahi: any = 0;
   constructor(private ModuloService: ModuloService, public sanitizer: DomSanitizer, private ls: AuthService) { }
 
   ngOnInit() {
     this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url)
-    // this.listarrecurso(2) sesion 2
-    // this.varidpersona = this.ls.usuario.idusuario;
-    // console.log(this.varidpersona)
-    // this.idPersona(this.varidpersona)
+
     this.idusuario()
     this.sesionActiva(this.varidpersona)
+    console.log(localStorage.getItem('quedateahi'))
   }
 
   idusuario(){
-    this.varidpersona = this.ls.usuario.idusuario
+    this.varidpersona = sessionStorage.getItem('quedateahi')
     console.log(this.varidpersona)
   }
 
@@ -44,20 +43,17 @@ export class ModulosComponent implements OnInit {
     this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url)
   }
 
-  idPersona(id: any) {
-    this.ModuloService.getIdPersona(id).subscribe(data => {
-      this.persona = data;
-      console.log(this.persona)
-    })
-  }
   sesionActiva(id: any) {
     this.ModuloService.getSesionActiva(id).subscribe(data => {
       this.sesion = data;
+      this.listarrecurso(data[0].idsesion)
       console.log(this.sesion)
+      sessionStorage.sesionactiva = this.sesion
+      console.log(`Sesion activa ${this.sactiva}`)
     })
   }
 
-  listarrecurso(id: any) {
+  public listarrecurso(id: any) {
     console.log(id)
     this.ModuloService.getRecurso(id).subscribe(data => {
       this.recurso = data;

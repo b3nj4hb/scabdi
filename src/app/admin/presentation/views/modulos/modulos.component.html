@@ -28,7 +28,8 @@
               <td>{{m.descripcion}}</td>
               <td>{{m.recursos}}</td>
               <td>
-                <a role="button" (click)="editar(id)" style="color:#157347">
+                <a role="button" (click)="editar(m)" style="color:#157347"
+                data-bs-toggle="modal" data-bs-target="#editarM">
                   <span class="material-icons">
                     edit
                   </span></a>
@@ -48,28 +49,55 @@
           <span class="visually-hidden">Loading...</span>
         </div> -->
       </div>
-      <!-- tabla reporte -->
-      <!-- <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Modulo</th>
-            <th scope="col">Banco Comunal</th>
-            <th scope="col">Recursos</th>
-            <th scope="col">Socios</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let mpb of mpb">
-            <td>{{mpb.no_modulo}}</td>
-            <td>{{mpb.no_banco_comunal}}</td>
-            <td>{{mpb.ca_total_recursos}}</td>
-            <td>{{mpb.ca_total_socios}}</td>
-          </tr>
-        </tbody>
-      </table> -->
 
 
+    </div>
+  </div>
+</div>
 
+<div class="modal fade" id="editarM" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">CREAR MODULO</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">NOMBRE</label>
+            <input type="text" class="form-control" name="nomodulo" id="recipient-name" [(ngModel)]="editarM.nombre">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">AREA</label>
+            <input type="text" class="form-control" name="noarea" id="recipient-name" >
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">RECURSO</label>
+            <input type="text" class="form-control" name="norecurso" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label"> AREA</label>
+            <!-- select -->
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Seleccione el área</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <!-- select -->
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">DESCRIPCION</label>
+            <input type="text" class="form-control" name="demodulo" id="recipient-name" >
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal" 
+        (click)="confirmar()" >GUARDAR</button>
+      </div>
     </div>
   </div>
 </div>

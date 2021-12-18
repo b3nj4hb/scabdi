@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit {
     this.post.id_persona = this.per
     this.post.fecha = '2021-10-26 20:20:33';
     // this.post.fecha = this.today;
-    console.log(this.per)
+    // console.log(this.per)
 
   }
   alert(){

@@ -4,4 +4,5 @@ export class Sesionactiva {
     fecha?:string;
     idsesion?:number;
     nombre?:string;
+    id?:number;
 }

@@ -16,6 +16,7 @@ export class ModulosComponent implements OnInit {
 
   filas: Modulos[] = [];
   // mpb: Modulosporbanco[] = [];
+  editarM: Modulos =new Modulos;
   constructor(private ModulosService: ModulosService) { }
 
   ngOnInit(): void {
@@ -35,12 +36,23 @@ export class ModulosComponent implements OnInit {
   //     console.log(this.mpb)
   //   })
   // }
-  editar(id:number){
-    alert("su id es:"+this.filas[id].id)
-    }
-  eliminar(id:number) {
+  confirmar() {
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'MODULO CREADO',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+  editar(modulo: Modulos) {
+    // alert("su id es:" + this.filas[id].id)
+    this.editarM = modulo
+    console.log(this.editarM)
+  }
+  eliminar(id: number) {
     var c = Number(this.filas[id].id);
-    this.ModulosService.delete(c).subscribe(data =>{
+    this.ModulosService.delete(c).subscribe(data => {
       console.log(data)
     });
     this.listar();
@@ -53,7 +65,7 @@ export class ModulosComponent implements OnInit {
       },
       buttonsStyling: false
     })
-    
+
     swalWithBootstrapButtons.fire({
       title: 'Esta Seguro?',
       text: "No se podrá revetir esta acción!",
@@ -68,7 +80,7 @@ export class ModulosComponent implements OnInit {
           'Eliminado!',
           'Su modulo ha sido eliminado.',
           'success'
-        ) 
+        )
       } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel

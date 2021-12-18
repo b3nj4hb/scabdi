@@ -5,6 +5,7 @@ import { CrearService } from '../../../views/crearseminario/crear.service';
 import { Modulo } from './modulo';
 import { Sesion } from './sesion';
 import { CrearMSService } from './crear.service';
+import { Area } from '../../../views/modulos/area';
 
 @Component({
   selector: 'adra-modulos-navbar',
@@ -15,6 +16,7 @@ export class ModulosNavbarComponent implements OnInit {
   post = new Seminario;
   modulo = new Modulo;
   sesion = new Sesion;
+  area = new Area;
   constructor(private ob: CrearService, private cs: CrearMSService) { }
 
 
@@ -29,7 +31,9 @@ export class ModulosNavbarComponent implements OnInit {
     this.cs.crearSesion(this.sesion).subscribe(data => {console.log(data)})
   }
   crearModulo(){
+    this.modulo.area.id = Number(this.area.id)
     this.cs.crearModulo(this.modulo).subscribe(data => {console.log(data)})
+    console.log(this.modulo)
   }
 
   confirmar() {

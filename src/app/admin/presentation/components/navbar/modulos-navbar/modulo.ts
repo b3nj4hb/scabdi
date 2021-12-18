@@ -1,6 +1,6 @@
 export class Modulo {
     id?: number;
-    area?: Area;
+    area: Area = new Area;
     nombre?: string;
     descripcion?: string;
     recursos?: number;

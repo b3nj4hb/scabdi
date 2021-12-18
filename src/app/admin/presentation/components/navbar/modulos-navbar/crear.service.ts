@@ -20,6 +20,6 @@ export class CrearMSService {
     return this.http.post<Sesion>(this.urls + '/create', post, this.httpOptions)
   }
   crearModulo(post: Modulo): Observable<any> {
-    return this.http.post<Modulo>(this.urls + '/create', post, this.httpOptions)
+    return this.http.post<Modulo>(this.urlm + '/create', post, this.httpOptions)
   }
 }
