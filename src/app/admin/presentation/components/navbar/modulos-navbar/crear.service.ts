@@ -30,4 +30,7 @@ export class CrearMSService {
   obtenerModulo(): Observable<any[]> {
     return this.http.get<any[]>(`${this.urlm}/all/`)
   }
+  actualizarModulo(id: number, upd: any) {
+    return this.http.put(`${this.urlm}/update/${id}`, upd)
+  }
 }

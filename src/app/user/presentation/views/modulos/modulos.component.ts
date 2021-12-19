@@ -33,7 +33,7 @@ export class ModulosComponent implements OnInit {
     console.log(localStorage.getItem('quedateahi'))
   }
 
-  idusuario(){
+  idusuario() {
     this.varidpersona = sessionStorage.getItem('quedateahi')
     console.log(this.varidpersona)
   }

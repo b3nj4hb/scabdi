@@ -19,10 +19,11 @@ export class ModulosComponent implements OnInit {
 
   filas: Modulos[] = [];
   // mpb: Modulosporbanco[] = [];
-  editarM: Modulos =new Modulos;
+  editarM: Modulos = new Modulos;
   modulo = new Modulo;
   areacrear = new Area;
   arealistar: Area[] = [];
+  actualizarM: Modulo = new Modulo;
   constructor(private ModulosService: ModulosService, private cs: CrearMSService) { }
 
   ngOnInit(): void {
@@ -30,17 +31,23 @@ export class ModulosComponent implements OnInit {
     this.listarArea()
     // this.modulosporbanco();
   }
+  actualizarModulo() {
+    this.actualizarM.nombre = 'pruebafrontend'
+    this.actualizarM.descripcion = 'descripciontypescript'
+    this.actualizarM.area.id = 7
+    console.log(this.actualizarM)
+  }
   listarArea() {
     this.cs.obtenerArea().subscribe(data => {
       this.arealistar = data;
       console.log(this.arealistar)
     })
   }
-  obtenerIdArea(id:any) {
+  obtenerIdArea(id: any) {
     console.log(id.target.value)
     this.modulo.area.id = Number(id.target.value)
   }
-  
+
   listar() {
     this.ModulosService.getModulos().subscribe(data => {
       this.filas = data;

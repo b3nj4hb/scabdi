@@ -21,6 +21,7 @@ export class ModuloService {
   getSesionActiva(id:number):Observable<Sesionactiva[]>{
     return this.http.get<Sesionactiva[]>(`${this.urlEndPoint}/sesionactiva/${id}`)
   }
+
   // getIdPersona(id:number): Observable<any[]>{
   //   return this.http.get<any[]>(`${this.urlEndPoint}/idpersona/${id}`)
   // }
