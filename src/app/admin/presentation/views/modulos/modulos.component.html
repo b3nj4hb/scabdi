@@ -33,7 +33,7 @@
                   <span class="material-icons">
                     edit
                   </span></a>
-                <a role="button" (click)="confirmareliminar()" style="color:#157347">
+                <a role="button" (click)="obtenerIdModulo(m);confirmareliminar()" style="color:#157347">
                   <span class="material-icons">
                     delete
                   </span></a>
@@ -70,7 +70,7 @@
             <select class="form-select" aria-label="Default select example" (change)="obtenerIdArea($event)"
               name="areaselect" id="recipient-name" [(ngModel)]="areacrear.id">
               <option selected> Seleccione el área</option>
-              <option [value]="a.id" *ngFor="let a of arealistar">{{a.nombre}}</option>
+              <option  [value]="a.id" *ngFor="let a of arealistar">{{a.nombre}}</option>
             </select>
             <!-- select -->
           </div>
@@ -96,7 +96,7 @@
       <div class="modal-footer">
 
         <button type="button" class="btn btn-success" data-bs-dismiss="modal" 
-        (click)="confirmar()" >GUARDAR</button>
+        (click)="actualizarModulo()" >GUARDAR</button>
       </div>
     </div>
   </div>

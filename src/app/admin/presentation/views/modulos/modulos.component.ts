@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 import { Area } from './area';
 import { CrearMSService } from '../../components/navbar/modulos-navbar/crear.service';
 import { Modulo } from '../../components/navbar/modulos-navbar/modulo';
+import { findLast } from '@angular/compiler/src/directive_resolver';
 // import swal from 'sweetalert2';
 // import Swal from 'sweetalert2'
 @Component({
@@ -24,6 +25,8 @@ export class ModulosComponent implements OnInit {
   areacrear = new Area;
   arealistar: Area[] = [];
   actualizarM: Modulo = new Modulo;
+  eliminarM:number = 0;
+
   constructor(private ModulosService: ModulosService, private cs: CrearMSService) { }
 
   ngOnInit(): void {
@@ -32,10 +35,10 @@ export class ModulosComponent implements OnInit {
     // this.modulosporbanco();
   }
   actualizarModulo() {
-    this.actualizarM.nombre = 'pruebafrontend'
-    this.actualizarM.descripcion = 'descripciontypescript'
-    this.actualizarM.area.id = 7
-    console.log(this.actualizarM)
+    this.cs.actualizarModulo(this.editarM.id, this.editarM).subscribe(data => {
+      console.log(data)
+      this.confirmar()
+    })
   }
   listarArea() {
     this.cs.obtenerArea().subscribe(data => {
@@ -47,12 +50,19 @@ export class ModulosComponent implements OnInit {
     console.log(id.target.value)
     this.modulo.area.id = Number(id.target.value)
   }
-
+  obtenerIdModulo(modulo:Modulos) {
+    this.editarM = modulo
+    this.eliminarM = this.editarM.id
+    console.log(this.eliminarM)
+    // this.eliminar()
+  }
   listar() {
     this.ModulosService.getModulos().subscribe(data => {
       this.filas = data;
       /*console.log(this.filas[0].area?.nombre)*/
+      
       console.log(this.filas)
+
     });
   }
 
@@ -72,12 +82,13 @@ export class ModulosComponent implements OnInit {
     })
   }
   editar(modulo: Modulos) {
-    // alert("su id es:" + this.filas[id].id)
     this.editarM = modulo
+    // alert("su id es:" + this.editarM.id)
     console.log(this.editarM)
   }
-  eliminar(id: number) {
-    var c = Number(this.filas[id].id);
+  eliminar() {
+    // alert("su id es:" + this.editarM.id)
+    var c = this.eliminarM;
     this.ModulosService.delete(c).subscribe(data => {
       console.log(data)
     });
@@ -102,6 +113,7 @@ export class ModulosComponent implements OnInit {
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
+        this.eliminar()
         swalWithBootstrapButtons.fire(
           'Eliminado!',
           'Su modulo ha sido eliminado.',
