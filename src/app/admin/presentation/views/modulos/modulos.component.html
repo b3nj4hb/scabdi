@@ -65,32 +65,32 @@
       <div class="modal-body">
         <form>
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">NOMBRE</label>
-            <input type="text" class="form-control" name="nomodulo" id="recipient-name" [(ngModel)]="editarM.nombre">
-          </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">AREA</label>
-            <input type="text" class="form-control" name="noarea" id="recipient-name" >
-          </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">RECURSO</label>
-            <input type="text" class="form-control" name="norecurso" id="recipient-name">
-          </div>
-          <div class="mb-3">
             <label for="recipient-name" class="col-form-label"> AREA</label>
             <!-- select -->
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" (change)="obtenerIdArea($event)"
+              name="areaselect" id="recipient-name" [(ngModel)]="areacrear.id">
               <option selected>Seleccione el área</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option [value]="a.id" *ngFor="let a of arealistar">{{a.nombre}}</option>
             </select>
             <!-- select -->
           </div>
+          <!-- <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">AREA</label>
+            <input type="text" class="form-control" name="noarea" id="recipient-name" [(ngModel)]="areacrear.id">
+          </div> -->
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">NOMBRE</label>
+            <input type="text" class="form-control" id="recipient-name" name="nomodulo" [(ngModel)]="editarM.nombre">
+          </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">DESCRIPCION</label>
-            <input type="text" class="form-control" name="demodulo" id="recipient-name" >
+            <input type="text" class="form-control" name="demodulo" id="recipient-name"
+              [(ngModel)]="editarM.descripcion">
           </div>
+          <!-- <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">RECURSO</label>
+            <input type="text" class="form-control" name="norecurso" id="recipient-name" [(ngModel)]="modulo.recursos">
+          </div> -->
         </form>
       </div>
       <div class="modal-footer">

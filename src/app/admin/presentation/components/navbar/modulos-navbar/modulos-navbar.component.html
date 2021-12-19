@@ -71,38 +71,38 @@
       <div class="modal-body">
         <form>
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">NOMBRE</label>
-            <input type="text" class="form-control" name="nomodulo" id="recipient-name" [(ngModel)]="modulo.nombre">
-          </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">AREA</label>
-            <input type="text" class="form-control" name="noarea" id="recipient-name" [(ngModel)]="area.id">
-          </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">RECURSO</label>
-            <input type="text" class="form-control" name="norecurso" id="recipient-name" [(ngModel)]="modulo.recursos">
-          </div>
-          <div class="mb-3">
             <label for="recipient-name" class="col-form-label"> AREA</label>
             <!-- select -->
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" (change)="obtenerIdArea($event)"
+              name="areaselect" id="recipient-name" [(ngModel)]="areacrear.id">
               <option selected>Seleccione el área</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option [value]="a.id" *ngFor="let a of arealistar">{{a.nombre}}</option>
             </select>
             <!-- select -->
           </div>
+          <!-- <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">AREA</label>
+            <input type="text" class="form-control" name="noarea" id="recipient-name" [(ngModel)]="areacrear.id">
+          </div> -->
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">NOMBRE</label>
+            <input type="text" class="form-control" id="recipient-name" name="nomodulo" [(ngModel)]="modulo.nombre">
+          </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">DESCRIPCION</label>
-            <input type="text" class="form-control" name="demodulo" id="recipient-name" [(ngModel)]="modulo.descripcion">
+            <input type="text" class="form-control" name="demodulo" id="recipient-name"
+              [(ngModel)]="modulo.descripcion">
           </div>
+          <!-- <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">RECURSO</label>
+            <input type="text" class="form-control" name="norecurso" id="recipient-name" [(ngModel)]="modulo.recursos">
+          </div> -->
         </form>
       </div>
       <div class="modal-footer">
 
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal" 
-        (click)="confirmar()" (click)="crearModulo()">GUARDAR</button>
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+          (click)="crearModulo();confirmar()">GUARDAR</button>
       </div>
     </div>
   </div>
@@ -119,37 +119,36 @@
       <div class="modal-body">
         <form>
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">MODULO</label>
-            <!-- select -->
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Seleccione el módulo</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-            <!-- select -->
-
+            <label for="recipient-name" class="col-form-label">NOMBRE</label>
+            <input type="text" class="form-control" id="recipient-name" name="nosesion" [(ngModel)]="sesion.no_sesion">
           </div>
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">NOMBRE</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <label for="recipient-name" class="col-form-label">MODULO</label>
+            <!-- select -->
+            <select class="form-select" aria-label="Default select example" name="nomodulo" [(ngModel)]="modulo.id">
+              <option selected>Seleccione el módulo</option>
+              <option [value]="m.id" *ngFor="let m of modulolistar">{{m.nombre}}</option>
+            </select>
+            <!-- select -->
           </div>
           <div class="mb-3">
             <div class="row g-2">
               <div class="col-md">
                 <label for="message-text" class="col-form-label">Fecha Inicio:</label>
-                <input type="date" class="form-control" id="recipient-name">
+                <input type="datetime-local" class="form-control" id="recipient-name" name="inicio"
+                  [(ngModel)]="sesion.fe_inicio_sesion">
               </div>
               <div class="col-md">
                 <label for="recipient-name" class="col-form-label">Fecha Fin:</label>
-                <input type="date" class="form-control" id="recipient-name">
+                <input type="datetime-local" class="form-control" id="recipient-name" name="fin"
+                  [(ngModel)]="sesion.fe_fin_sesion">
               </div>
             </div>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" (click)="confirmarsesion()" class="btn btn-success"
+        <button type="button" (click)="confirmarsesion(); crearSesion()" class="btn btn-success"
           data-bs-dismiss="modal">GUARDAR</button>
       </div>
     </div>
@@ -188,7 +187,8 @@
 
       </div>
       <div class="modal-footer">
-        <button (click)="guardar()" (click)="confirmarsem()" type="button" class="btn btn-success" data-bs-dismiss="modal">Crear</button>
+        <button (click)="guardar()" (click)="confirmarsem()" type="button" class="btn btn-success"
+          data-bs-dismiss="modal">Crear</button>
       </div>
     </div>
   </div>

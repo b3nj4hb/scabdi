@@ -3,7 +3,8 @@ export class Modulo {
     area: Area = new Area;
     nombre?: string;
     descripcion?: string;
-    recursos?: number;
+    recursos = 0;
+    // recursos?: number;
 }
 export class Area {
     id?: number;

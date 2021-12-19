@@ -3,6 +3,9 @@ import { Modulos } from './modulos';
 import { ModulosService } from './modulos.service';
 import { Modulosporbanco } from './modulosporbanco';
 import Swal from 'sweetalert2'
+import { Area } from './area';
+import { CrearMSService } from '../../components/navbar/modulos-navbar/crear.service';
+import { Modulo } from '../../components/navbar/modulos-navbar/modulo';
 // import swal from 'sweetalert2';
 // import Swal from 'sweetalert2'
 @Component({
@@ -17,12 +20,27 @@ export class ModulosComponent implements OnInit {
   filas: Modulos[] = [];
   // mpb: Modulosporbanco[] = [];
   editarM: Modulos =new Modulos;
-  constructor(private ModulosService: ModulosService) { }
+  modulo = new Modulo;
+  areacrear = new Area;
+  arealistar: Area[] = [];
+  constructor(private ModulosService: ModulosService, private cs: CrearMSService) { }
 
   ngOnInit(): void {
     this.listar();
+    this.listarArea()
     // this.modulosporbanco();
   }
+  listarArea() {
+    this.cs.obtenerArea().subscribe(data => {
+      this.arealistar = data;
+      console.log(this.arealistar)
+    })
+  }
+  obtenerIdArea(id:any) {
+    console.log(id.target.value)
+    this.modulo.area.id = Number(id.target.value)
+  }
+  
   listar() {
     this.ModulosService.getModulos().subscribe(data => {
       this.filas = data;
@@ -30,6 +48,7 @@ export class ModulosComponent implements OnInit {
       console.log(this.filas)
     });
   }
+
   // modulosporbanco() {
   //   this.ModulosService.getModulosPorBanco().subscribe(data => {
   //     this.mpb = data;

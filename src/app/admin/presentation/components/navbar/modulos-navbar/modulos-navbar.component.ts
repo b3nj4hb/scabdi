@@ -16,23 +16,51 @@ export class ModulosNavbarComponent implements OnInit {
   post = new Seminario;
   modulo = new Modulo;
   sesion = new Sesion;
-  area = new Area;
+  arealistar: Area[] = [];
+  areacrear = new Area;
+  modulolistar: Modulo[] = [];
   constructor(private ob: CrearService, private cs: CrearMSService) { }
 
 
   ngOnInit(): void {
+    this.listarArea()
+    this.listarModulo()
   }
+  // listar areas
+  listarArea() {
+    this.cs.obtenerArea().subscribe(data => {
+      this.arealistar = data;
+      console.log(this.arealistar)
+    })
+
+  }
+  obtenerIdArea(id:any) {
+    console.log(id.target.value)
+    this.modulo.area.id = Number(id.target.value)
+  }
+  // crear seminario
   guardar() {
 
     this.ob.create(this.post).subscribe(data => { console.log(data) })
   }
-
-  crearSesion(){
-    this.cs.crearSesion(this.sesion).subscribe(data => {console.log(data)})
+  listarModulo() {
+    this.cs.obtenerModulo().subscribe(data => {
+      this.modulolistar = data;
+      console.log(this.modulolistar)
+    })
   }
-  crearModulo(){
-    this.modulo.area.id = Number(this.area.id)
-    this.cs.crearModulo(this.modulo).subscribe(data => {console.log(data)})
+  obtenerIdModulo(id:any){
+    console.log(id.target.value)
+    this.sesion.id_modulo.id = Number(id.target.value)
+  }
+  crearSesion() {
+    this.sesion.id_modulo.id = Number(this.modulo.id)
+    this.cs.crearSesion(this.sesion).subscribe(data => { console.log(data) })
+    console.log(this.sesion)
+  }
+  crearModulo() {
+    this.modulo.area.id = Number(this.areacrear.id)
+    this.cs.crearModulo(this.modulo).subscribe(data => { console.log(data) })
     console.log(this.modulo)
   }
 
