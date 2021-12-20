@@ -8,7 +8,7 @@ import { SocioService } from './socio.service';
   styleUrls: ['./socios.css']
 })
 export class SociosComponent implements OnInit {
-  persona: Persona[] = [];
+  // persona: Persona[] = [];
   socio: any[] = [];
   datos: any[] = [];
   modulos: any[] = [];
@@ -24,12 +24,12 @@ export class SociosComponent implements OnInit {
   }
 
   // procedimiento josue
-  listarsocios(id: any) {
-    this.socioserv.getSocios(id).subscribe(data => {
-      this.persona = data;
-      console.log(this.persona)
-    })
-  }
+  // listarsocios(id: any) {
+  //   this.socioserv.getSocios(id).subscribe(data => {
+  //     this.persona = data;
+  //     console.log(this.persona)
+  //   })
+  // }
 
   // reporte socio
   listarSocio() {

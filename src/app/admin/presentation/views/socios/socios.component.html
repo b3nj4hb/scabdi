@@ -25,8 +25,8 @@
                         <td>
                             <div>
                                 <a id="boton" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
-                                    data-bs-target="#verMas" (click)="listarDatos(s.idsocio)"
-                                    (click)="listarModulos(s.idsocio)" (click)="listarPedidos(s.idsocio)">
+                                    data-bs-target="#verMas" 
+                                    (click)="listarDatos(s.idsocio);listarModulos(s.idsocio);listarPedidos(s.idsocio)">
                                     <span id="icono" class="material-icons-outlined">visibility</span>
                                     <span>Ver Más</span>
                                 </a>
@@ -52,7 +52,7 @@
                 <div id="datosCardCard">
                     <!-- obs acomodar y hacer que se vea simetrico -->
                     <div id="img">
-                        <img style="max-height: 200px;" src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="">
+                        <img style="max-height: 200px;" src="https://c.tenor.com/poUP8KnPbLsAAAAC/pfp-getapfp.gif" alt="">
                     </div>
                     <div id="datosCard" class="card" *ngFor="let d of datos">
                         <div class="card-header">
