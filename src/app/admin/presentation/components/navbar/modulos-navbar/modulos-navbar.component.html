@@ -174,14 +174,15 @@
           <input type="text" class="form-control" id="recipient-name" name="urlconferencia" [(ngModel)]="post.url">
         </div>
 
-        <div style="display: flex;">
+        <div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">FECHA DE INICIO</label>
-            <input type="date" class="form-control" id="recipient-name" name="feinicio" [(ngModel)]="post.inicio">
+            <input type="datetime-local" class="form-control" id="recipient-name" name="feinicio"
+              [(ngModel)]="post.inicio">
           </div>
-          <div class="mb-3" style="margin-left: 20px ;">
+          <div class="mb-3">
             <label for="recipient-name" class="col-form-label">FECHA DE FINALIZACION</label>
-            <input type="date" class="form-control" id="recipient-name" name="fefin" [(ngModel)]="post.fin">
+            <input type="datetime-local" class="form-control" id="recipient-name" name="fefin" [(ngModel)]="post.fin">
           </div>
         </div>
 
