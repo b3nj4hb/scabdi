@@ -19,7 +19,10 @@ export class SeminariosService {
   getDigi2(id:number): Observable<Digi2[]> {
     return this.http.get<Digi2[]>(`${this.urlEndPoint}/digi/${id}`)
   }
-  getSeminarios(): Observable<Conferencia[]> {
-    return this.http.get<Conferencia[]>(this.urlEndPoint + '/all')
+  getSeminarios(): Observable<any[]> {
+    return this.http.get<any[]>(this.urlEndPoint + '/all')
+  }
+  actualizarSeminario(id:number,upd:any){
+    return this.http.put(`${this.urlEndPoint}/update/${id}`, upd)
   }
 }

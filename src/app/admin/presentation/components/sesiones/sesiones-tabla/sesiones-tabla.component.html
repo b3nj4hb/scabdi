@@ -22,8 +22,9 @@
           <a role="button" data-bs-toggle="modal" data-bs-target="#agregar_material" (click)="listarrecursos(s.id)">
             <span class="material-icons" style="color:#157347">upload_file</span>
           </a>
-          <a role="button" (click)="editar(s.id)">
-            <span class="material-icons" style="color:#157347">edit</span>
+          <a role="button"  
+          data-bs-toggle="modal" data-bs-target="#editarS" (click)="editarSesion(s)">
+            <span class=" material-icons" style="color:#157347">edit</span>
           </a>
           <a role="button" data-bs-toggle="modal" data-bs-target="#ver_recursos" (click)="listarrecursos(s.id)">
             <span class="material-icons" style="color:#157347">visibility</span>
@@ -34,6 +35,58 @@
     </tr>
   </tbody>
 </table>
+
+<!-- modal de crear sesiones -->
+<div class="modal fade" id="editarS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">CREAR SESION</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">NOMBRE</label>
+            <input type="text" class="form-control" id="recipient-name" 
+            name="nosesion" [(ngModel)]="editarS.nombre">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">MODULO</label>
+            <!-- select -->
+            <select class="form-select" aria-label="Default select example" (change)="obtenerIdModulo($event)"
+            name="nomodulo" [(ngModel)]="modulocrear.id">
+              <option selected>Seleccione el módulo</option>
+              <option [value]="m.id" *ngFor="let m of modulolistar">{{m.nombre}}</option>
+            </select>
+            <!-- select -->
+          </div>
+          <div class="mb-3">
+            <div class="row g-2">
+              <div class="col-md">
+                <label for="message-text" class="col-form-label">Fecha Inicio:</label>
+                <input type="datetime-local" class="form-control" id="recipient-name" 
+                name="feinicio" [(ngModel)]="editarS.inicio">
+              </div>
+              <div class="col-md">
+                <label for="recipient-name" class="col-form-label">Fecha Fin:</label>
+                <input type="datetime-local" class="form-control" id="recipient-name" 
+                name="fefin" [(ngModel)]="editarS.fin">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="actualizarSesion()" class="btn btn-success"
+          data-bs-dismiss="modal">GUARDAR</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal de crear sesiones -->
+
+
 
 <!-- modal ver recursos -->
 

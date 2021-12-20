@@ -21,4 +21,7 @@ export class SesionesService {
   getRecursos(id:number): Observable<Recurso[]> {
     return this.http.get<Recurso[]>(`${this.urlEndPoint}/recursos/${id}`)
   }
+  actualizarSesion(id:number, upd: any) {
+    return this.http.put(`${this.urlEndPoint}/update/${id}`, upd)
+  }
 }

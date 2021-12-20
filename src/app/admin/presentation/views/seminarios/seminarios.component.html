@@ -21,6 +21,12 @@
                         <td>{{s.inicio}}</td>
                         <td>{{s.fin}}</td>
                         <td>{{s.url}}</td>
+                        <td>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#editarSeminario"
+                            (click)="capturardatos(s)">
+                                <span class="material-icons">edit</span>
+                            </a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -28,3 +34,48 @@
         </div>
     </div>
 </div>
+
+
+<!-- modal de crear seminarios -->
+<div class="modal fade" id="editarSeminario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">DATOS DEL SEMINARIO</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">NOMBRE</label>
+                    <input type="text" class="form-control" id="recipient-name" name="noconferencia"
+                        [(ngModel)]="editarS.nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">ENLACE</label>
+                    <input type="text" class="form-control" id="recipient-name" name="urlconferencia"
+                        [(ngModel)]="editarS.url">
+                </div>
+
+                <div style="display: flex;">
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">FECHA DE INICIO</label>
+                        <input type="date" class="form-control" id="recipient-name" name="feinicio"
+                            [(ngModel)]="editarS.inicio">
+                    </div>
+                    <div class="mb-3" style="margin-left: 20px ;">
+                        <label for="recipient-name" class="col-form-label">FECHA DE FINALIZACION</label>
+                        <input type="date" class="form-control" id="recipient-name" name="fefin" [(ngModel)]="editarS.fin">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button (click)="actualizarSeminario()" type="button" class="btn btn-success"
+                    data-bs-dismiss="modal">Crear</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal de crear seminarios -->

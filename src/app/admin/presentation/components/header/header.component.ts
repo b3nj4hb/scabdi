@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-declare var $:any;
+declare var $: any;
 @Component({
   selector: 'adra-header',
   templateUrl: './header.component.html',
@@ -7,15 +7,21 @@ declare var $:any;
   ]
 })
 export class HeaderComponent implements OnInit {
-
+  nombre: any;
   constructor() { }
 
   ngOnInit(): void {
+    this.username()
   }
-fab(){
-  $(document).ready(function(){
-    $('.fixed-action-btn').floatingActionButton();
-  });
-      
-}
+  username() {
+
+    this.nombre = sessionStorage.getItem('username')
+    console.log(this.nombre)
+  }
+  fab() {
+    $(document).ready(function () {
+      $('.fixed-action-btn').floatingActionButton();
+    });
+
+  }
 }

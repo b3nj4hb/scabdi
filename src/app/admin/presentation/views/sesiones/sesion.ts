@@ -1,7 +1,9 @@
+import { Modulo } from "../../components/navbar/modulos-navbar/modulo";
+
 export class Sesion {
-    id?:number;
+    id:number = 0;
     nombre?:string;
-    modulo?:string;
+    modulo:Modulo = new Modulo;
     area?:string;
     inicio?:string;
     fin?:string;
